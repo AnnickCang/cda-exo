@@ -1,4 +1,4 @@
-def fizzBuzz(n:int) -> None:
+def fizzBuzz(n: int) -> None:
   reste_division_3 = n % 3
   reste_division_5 = n % 5
 
@@ -12,7 +12,7 @@ def fizzBuzz(n:int) -> None:
     print(n)
 
 
-def _IgnorerEspaceEtCasse(chaine:str) -> str:
+def _IgnorerEspaceEtCasse(chaine: str) -> str:
   chaine_normalise = ""
   for c in chaine.lower():
     match c:
@@ -35,7 +35,7 @@ def _IgnorerEspaceEtCasse(chaine:str) -> str:
 
   return chaine_normalise
 
-def isPalindrome(chaine:str) -> bool:
+def isPalindrome(chaine: str) -> bool:
   chaine_normalise = _IgnorerEspaceEtCasse(chaine)
   taille_chaine = len(chaine_normalise)
 
@@ -48,7 +48,7 @@ def isPalindrome(chaine:str) -> bool:
   return True
 
 
-def areAnagrams(str1:str, str2:str) -> bool:
+def areAnagrams(str1: str, str2: str) -> bool:
   str1_normalise = _IgnorerEspaceEtCasse(str1)
   str2_normalise = _IgnorerEspaceEtCasse(str2)
 
@@ -66,7 +66,7 @@ def areAnagrams(str1:str, str2:str) -> bool:
   return dict_lettres_str1 == dict_lettres_str2
 
 
-def fibonacci(n:int)-> int:
+def fibonacci(n: int)-> int:
   if n == 0:
     return 0
   elif n == 1:
@@ -76,7 +76,7 @@ def fibonacci(n:int)-> int:
     return dernier_nombre
 
 
-def fibonacciIterative(n:int) -> int:
+def fibonacciIterative(n: int) -> int:
   if n == 0:
     return 0
   elif n == 1:
@@ -90,6 +90,27 @@ def fibonacciIterative(n:int) -> int:
       fibo_n_moins_1 = dernier_nombre
     return dernier_nombre
 
+
+def sortArray(liste: list) -> list:
+  liste_triee = liste
+  taille_liste = len(liste_triee)
+  for i in range(0, taille_liste-1):
+    for j in range(i+1, taille_liste):
+      if liste_triee[i] > liste_triee[j]:
+        temp = liste_triee[i]
+        liste_triee[i] = liste_triee[j]
+        liste_triee[j] = temp
+
+  return liste_triee
+
+
+
+def findMax(liste: list) -> int:
+  nb_max = liste[0]
+  for i in liste:
+    if i > nb_max:
+      nb_max = i
+  return nb_max
 
 
 if __name__ == "__main__":
@@ -137,3 +158,9 @@ if __name__ == "__main__":
       f"Enième nombre de la suite de Fibonacci pour n = {n} : "
       f"{fibonacciIterative(n)}"
     )
+
+print("\nExercice 3.5 - Tri & recherche")
+liste_exo_3_5 = [3, 1, 4, 1, 5, 9, 2]
+print(f"Liste de test : {liste_exo_3_5}")
+print(f"Liste triée : {sortArray(liste_exo_3_5)}")
+print(f"Nombre le plus grand de liste : {findMax(liste_exo_3_5)}")
