@@ -1,4 +1,4 @@
-def fizzBuzz(n:int)-> None:
+def fizzBuzz(n:int) -> None:
   reste_division_3 = n % 3
   reste_division_5 = n % 5
 
@@ -12,7 +12,7 @@ def fizzBuzz(n:int)-> None:
     print(n)
 
 
-def _IgnorerEspaceEtCasse(chaine:str)-> str:
+def _IgnorerEspaceEtCasse(chaine:str) -> str:
   chaine_normalise = ""
   for c in chaine.lower():
     match c:
@@ -48,7 +48,7 @@ def isPalindrome(chaine:str) -> bool:
   return True
 
 
-def areAnagrams(str1:str, str2:str)-> bool:
+def areAnagrams(str1:str, str2:str) -> bool:
   str1_normalise = _IgnorerEspaceEtCasse(str1)
   str2_normalise = _IgnorerEspaceEtCasse(str2)
 
@@ -64,6 +64,32 @@ def areAnagrams(str1:str, str2:str)-> bool:
     dict_lettres_str2[lettre] += 1
 
   return dict_lettres_str1 == dict_lettres_str2
+
+
+def fibonacci(n:int)-> int:
+  if n == 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    dernier_nombre = fibonacci(n-1) + fibonacci(n-2)
+    return dernier_nombre
+
+
+def fibonacciIterative(n:int) -> int:
+  if n == 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    fibo_n_moins_1 = 1
+    fibo_n_moins_2 = 0
+    for i in range(2, n+1):
+      dernier_nombre = fibo_n_moins_1 + fibo_n_moins_2
+      fibo_n_moins_2 = fibo_n_moins_1
+      fibo_n_moins_1 = dernier_nombre
+    return dernier_nombre
+
 
 
 if __name__ == "__main__":
@@ -96,3 +122,18 @@ if __name__ == "__main__":
       print(f"{str1} et {str2} sont des anangrammes")
     else:
       print(f"{str1} et {str2} ne sont pas des anangrammes")
+
+  print("\nExercice 3.4 - Suite de Fibonacci")
+  liste_nb_fibo = [0, 1, 6, 10]
+  print("- Avec la fonction récursive :")
+  for n in liste_nb_fibo:
+    print(
+      f"Enième nombre de la suite de Fibonacci pour n = {n} : "
+      f"{fibonacci(n)}"
+    )
+  print("- Avec la fonction itérative :")
+  for n in liste_nb_fibo:
+    print(
+      f"Enième nombre de la suite de Fibonacci pour n = {n} : "
+      f"{fibonacciIterative(n)}"
+    )
