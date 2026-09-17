@@ -113,6 +113,42 @@ def findMax(liste: list) -> int:
   return nb_max
 
 
+def filterByCategory(products: list, category: str) -> list:
+  same_category_products = []
+  for product in products:
+    if product["category"] == category:
+      same_category_products.append(product)
+  return same_category_products
+
+
+def getAveragePrice(products: list) -> int:
+  averagePrice = 0
+  for product in products:
+    averagePrice += product["price"]
+  if len(products) > 0:
+    averagePrice = averagePrice // len(products)
+  return averagePrice
+
+
+def getMostExpensive(products: list) -> dict:
+  most_expensive_price = 0
+  for product in products:
+    if product["price"] > most_expensive_price:
+      most_expensive_price = product["price"]
+      mostExpensiveProduct = product
+  return mostExpensiveProduct
+
+
+def groupByCategory(products: list) -> dict:
+  categorySet = (product["category"] for product in products)
+  productsGroupByCategory = dict()
+  for category in categorySet:
+    productsGroupByCategory.setdefault(category, [])
+  for product in products:
+    productsGroupByCategory[product["category"]].append(product)
+  return productsGroupByCategory
+
+
 if __name__ == "__main__":
   print("\nExercice 3.1 - FizzBuzz")
   liste_nombre = [1, 6, 5, 15, 20]
@@ -164,3 +200,30 @@ liste_exo_3_5 = [3, 1, 4, 1, 5, 9, 2]
 print(f"Liste de test : {liste_exo_3_5}")
 print(f"Liste triée : {sortArray(liste_exo_3_5)}")
 print(f"Nombre le plus grand de liste : {findMax(liste_exo_3_5)}")
+
+print("\nExercice 3.6 - Manipulation de donnnées")
+products = [
+  {"id": 1, "name": "Laptop", "price": 999, "category": "Electronics"},
+  {"id": 2, "name": "Phone", "price": 699, "category": "Electronics"},
+  {"id": 3, "name": "Desk", "price": 299, "category": "Furniture"},
+  {"id": 4, "name": "Chair", "price": 199, "category": "Furniture"},
+  {"id": 5, "name": "Monitor", "price": 299, "category": "Electronics"},
+]
+print("- Liste des produits :")
+for product in products:
+  print(product)
+category = "Electronics"
+products_in_a_category = filterByCategory(products, category)
+print(f"- Liste des produits de la catégorie {category} :")
+for product in products_in_a_category:
+  print(product)
+print(f"- Prix moyen de cette liste : {getAveragePrice(products)}")
+print("- Produit le plus cher :")
+print(f"{getMostExpensive(products)}")
+print("- Produits groupés par catégories :")
+productsGroupByCategory = groupByCategory(products)
+for key in productsGroupByCategory.keys():
+  print(f"{key} :")
+  for product in productsGroupByCategory[key]:
+    print(product)
+  
