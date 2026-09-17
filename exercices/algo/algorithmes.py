@@ -12,9 +12,9 @@ def fizzBuzz(n:int)-> None:
     print(n)
 
 
-def isPalindrome(chaine:str) -> bool:
+def _IgnorerEspaceEtCasse(chaine:str)-> str:
   chaine_normalise = ""
-  for c in chaine:
+  for c in chaine.lower():
     match c:
       case " ":
         continue
@@ -33,7 +33,12 @@ def isPalindrome(chaine:str) -> bool:
       case _:
         chaine_normalise += c
 
+  return chaine_normalise
+
+def isPalindrome(chaine:str) -> bool:
+  chaine_normalise = _IgnorerEspaceEtCasse(chaine)
   taille_chaine = len(chaine_normalise)
+
   for i in range(taille_chaine//2):
     if chaine_normalise[i] == chaine_normalise[taille_chaine-i-1]:
       continue
@@ -41,6 +46,25 @@ def isPalindrome(chaine:str) -> bool:
       return False
 
   return True
+
+
+def areAnagrams(str1:str, str2:str)-> bool:
+  str1_normalise = _IgnorerEspaceEtCasse(str1)
+  str2_normalise = _IgnorerEspaceEtCasse(str2)
+
+  dict_lettres_str1 = dict()
+  dict_lettres_str2 = dict()
+  for lettre in "abcdefghijklmnopqrstuvwxyz":
+    dict_lettres_str1.setdefault(lettre, 0)
+    dict_lettres_str2.setdefault(lettre, 0)
+
+  for lettre in str1_normalise:
+    dict_lettres_str1[lettre] += 1
+  for lettre in str2_normalise:
+    dict_lettres_str2[lettre] += 1
+
+  return dict_lettres_str1 == dict_lettres_str2
+
 
 if __name__ == "__main__":
   print("\nExercice 3.1 - FizzBuzz")
@@ -53,10 +77,22 @@ if __name__ == "__main__":
     "élu par cette crapule",
     "radar",
     "kayak",
-    "coucou"
+    "hello"
   ]
   for chaine in liste_de_chaines:
     if isPalindrome(chaine):
       print(f"'{chaine}' est un palindrome")
     else:
       print(f"'{chaine}' n'est pas un palindrome")
+
+  print("\nExercice 3.3 - Anagrammes")
+  liste_anagrammes = [
+    ("listen", "silent"),
+    ("hello", "world"),
+    ("Astronomer", "Moon starer"),
+  ]
+  for str1, str2 in liste_anagrammes:
+    if areAnagrams(str1, str2):
+      print(f"{str1} et {str2} sont des anangrammes")
+    else:
+      print(f"{str1} et {str2} ne sont pas des anangrammes")
