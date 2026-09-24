@@ -1,95 +1,148 @@
+:root {
+  --bg-color: rgb(0, 0, 255);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-@font-face {
-  font-family: "Playwrite BE WAL Guides";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/playwritebewalguides/v1/l7gPbiR5yM62ycwevWCt02rrTFoEJvY4kyrrUzHg.woff2)
-    format("woff2");
+html {
+  font-size: 16px;
 }
 
 body {
-  width: 1000px;
-  height: 800px;
-  margin: 20px auto;
+  width: 100vw;
+  height: 100vh;
 
+  position: relative;
   display: flex;
-
-  /*background-image: url("images/img-de-fond.png");*/
-  background-attachment: fixed;
-  background-position: center;
-  background: border-box orange;
-
-  border: 2px solid yellow;
-
-  font-family: "Playwrite BE WAL Guides";
-}
-
-.avant-plan {
-  width: 800px;
-  height: 600px;
-
-  /*position: relative;
-  bottom: 80%;*/
-
-  background-color: white;
-
-  border: 2px solid purple;
-}
-/*
-header {
-  width: 30em;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  background-color: green;
-  border: 2px solid black;
-}
-
-.img-portfolio {
-  box-shadow: 20px 20px 0px blue;
-  border-radius: 15px;
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-
-  text-align: center;
-
-  border: 2px solid black;
-}
-
-.avant-plan {
-  display: flex;
-  gap: 10px;
-
-  margin: 10px;
-}
-
-main {
-  flex-grow: 1;
-
-  background-color: yellow;
-  border: 2px solid black;
-}
-
-footer {
-  height: 60px;
+  justify-content: center;
+  align-items: center;
 
   background-color: pink;
+}
+
+/*triangle bleu en arriere plan*/
+body .bg-form {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  object-fit: cover;
+
+  background-color: var(--bg-color);
+}
+
+body .main-frame {
+  position: absolute;
+  z-index: 2;
+
+  width: 60vw;
+  height: 60vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  background-color: bisque;
+}
+
+body .main-frame .profile-section {
+  width: 50%;
+  height: 100%;
+  position: relative;
+
+  background-color: aqua;
+}
+
+body .main-frame .profile-section .profile-img {
+  position: absolute;
+  top: -5%;
+  left: 10%;
+  width: 100%;
+  aspect-ratio: 1/1; /*pour calculer le height en fonction du width*/
+
+  border: 2px solid black;
+
+  z-index: 4;
+}
+
+body .main-frame .profile-section .photo-frame-bg {
+  width: 100%;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+
+  border: 10px solid var(--bg-color);
+  background-color: white;
+  z-index: 1;
+}
+
+body .main-frame .profile-section .profile-name {
+  width: 100%;
+  position: absolute;
+  top: 28%;
+  left: 35%;
+  z-index: 2;
   border: 2px solid black;
 }
 
-.img-footer {
-  width: 50px;
-  height: 50px;
+body .main-frame .profile-section .profile-name h1 {
+  font-size: 1rem;
+  top: 40%;
 }
-*/
+
+body .main-frame .profile-section .profile-name h2 {
+  font-size: 0.6rem;
+  top: 70%;
+}
+
+body .main-frame .profile-section .profile-info {
+  position: absolute;
+  top: 60%;
+}
+
+body .main-frame .profile-section .profile-info li {
+  /*enlever les puces*/
+}
+
+body .main-frame .main-footer {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  border: 2px solid black;
+}
+
+body .main-frame .main-footer main {
+  border: 2px solid red;
+}
+
+body .main-frame .main-footer main .main-p {
+  width: 100%;
+  margin: 20px auto;
+}
+
+body .main-frame .main-footer footer {
+  width: 100%;
+  height: 30px;
+
+  display: flex;
+  justify-content: space-around;
+
+  border: 2px solid yellow;
+}
+
+body .main-frame .main-footer footer .footer-img {
+  width: 20px;
+  height: 20px;
+}

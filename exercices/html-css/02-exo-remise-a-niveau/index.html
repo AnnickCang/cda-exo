@@ -3,36 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <link href="styles.css" rel="stylesheet" />
+    <link name="viexport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
   </head>
   <body>
-    <!--
-    <header>
-      <img class="img-portfolio" src="images/photo_profile.png" alt="Photo" />
-      <h1>Le Chat</h1>
+    <!-- fond bleu en arriere-plan-->
+    <div class="bg-form"></div>
+
+    <!-- conteneur pour tous les éléments affichés-->
+    <div class="main-frame">
+      <header class="profile-section">
+        <!-- colonne de gauche avec la photo et une rapide descriptif -->
+        <img
+          class="profile-img"
+          src="images/photo_profile.png"
+          alt="Profile photo"
+        />
+
+        <div class="photo-frame-bg"></div>
+
+        <div class="profile-name">
+          <h1 id="h1-name">JECKULIN DOE</h1>
+          <h2 class="h2-job">USER INTERFACE CRAFTER</h2>
+        </div>
+        <div class="profile-info">
+          <ul>
+            <li>PROFILE</li>
+            <li>AWARDS</li>
+            <li>EDUCATION</li>
+            <li>EXPERIENCE</li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- corps avec le texte -->
+      <div class="main-footer">
+        <main>
+          <p class="main-p">
+            1er paragraphe Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+          </p>
+          <p class="main-p">
+            2eme paragraphe Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum.
+          </p>
+        </main>
+
+        <!-- pied de page avec les icônes -->
+        <footer>
+          <img class="footer-img" src="images/img1.svg" alt="image-1" />
+          <img class="footer-img" src="images/img2.svg" alt="image-2" />
+          <img class="footer-img" src="images/img3.svg" alt="image-3" />
+          <img class="footer-img" src="images/img4.svg" alt="image-4" />
+          <img class="footer-img" src="images/img5.svg" alt="image-5" />
+          <img class="footer-img" src="images/img6.svg" alt="image-6" />
+        </footer>
+      </div>
+
+      <!-- menu de navigation à droite -->
       <nav class="sidebar-nav">
-        <a href="profile.html">Profile</a>
-        <a href="awards.html">Awards</a>
-        <a href="education.html">Education</a>
-        <a href="experience.html">Experience</a>
+        <a class="nav-element" href="index.html">HOME</a>
+        <a class="nav-element" href="about.html">ABOUT</a>
+        <a class="nav-element" href="works.html">WORKS</a>
+        <a class="nav-element" href="contact.html">CONTACT</a>
       </nav>
-    </header>
-    <div class="main-footer">
-      <main>
-        <section class="profile-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </section>
-      </main>
-      <footer>
-        <img class="img-footer" src="images/img1.svg" alt="image1" />
-        <img class="img-footer" src="images/img2.svg" alt="image2" />
-      </footer>
-    </div>-->
+    </div>
   </body>
 </html>
