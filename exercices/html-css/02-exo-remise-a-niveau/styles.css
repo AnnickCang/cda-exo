@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Playwrite BE WAL Guides";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playwritebewalguides/v1/l7gPbiR5yM62ycwevWCt02rrTFoEJvY4kyrrUzHg.woff2)
+    format("woff2");
+}
+
+body {
+  width: 1000px;
+  height: 800px;
+  margin: 20px auto;
+
+  display: flex;
+
+  /*background-image: url("images/img-de-fond.png");*/
+  background-attachment: fixed;
+  background-position: center;
+  background: border-box orange;
+
+  border: 2px solid yellow;
+
+  font-family: "Playwrite BE WAL Guides";
+}
+
+.avant-plan {
+  width: 800px;
+  height: 600px;
+
+  /*position: relative;
+  bottom: 80%;*/
+
+  background-color: white;
+
+  border: 2px solid purple;
+}
+/*
+header {
+  width: 30em;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  background-color: green;
+  border: 2px solid black;
+}
+
+.img-portfolio {
+  box-shadow: 20px 20px 0px blue;
+  border-radius: 15px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  border: 2px solid black;
+}
+
+.avant-plan {
+  display: flex;
+  gap: 10px;
+
+  margin: 10px;
+}
+
+main {
+  flex-grow: 1;
+
+  background-color: yellow;
+  border: 2px solid black;
+}
+
+footer {
+  height: 60px;
+
+  background-color: pink;
+  border: 2px solid black;
+}
+
+.img-footer {
+  width: 50px;
+  height: 50px;
+}
+*/
