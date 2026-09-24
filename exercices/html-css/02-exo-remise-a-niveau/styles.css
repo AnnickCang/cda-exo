@@ -31,17 +31,16 @@ body .bg-form {
   height: 100vh;
   z-index: 1;
 
-  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(25% 100%, 100% 100%, 100% -25%);
   object-fit: cover;
 
   background-color: var(--bg-color);
 }
 
 body .main-frame {
-  position: absolute;
   z-index: 2;
 
-  width: 60vw;
+  width: 80vw;
   height: 60vh;
 
   display: flex;
@@ -53,53 +52,63 @@ body .main-frame {
 }
 
 body .main-frame .profile-section {
-  width: 50%;
+  width: 30%;
+  min-width: 250px;
   height: 100%;
+
+  flex-shrink: 0;
+
   position: relative;
 
   background-color: aqua;
 }
 
-body .main-frame .profile-section .profile-img {
+body .main-frame .profile-section .photo {
+  position: relative;
+  width: 70%;
+  min-width: 200px;
+  aspect-ratio: 1/1;
+}
+
+body .main-frame .profile-section .photo .profile-img {
   position: absolute;
-  top: -5%;
+  top: -10%;
   left: 10%;
-  width: 100%;
+  width: 90%;
   aspect-ratio: 1/1; /*pour calculer le height en fonction du width*/
 
   border: 2px solid black;
 
-  z-index: 4;
+  z-index: 3;
 }
 
-body .main-frame .profile-section .photo-frame-bg {
+body .main-frame .profile-section .photo .photo-frame-bg {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/5;
   position: absolute;
   top: 10%;
   left: 30%;
   clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
 
-  border: 10px solid var(--bg-color);
+  border: 20px solid var(--bg-color);
   background-color: white;
   z-index: 1;
 }
 
-body .main-frame .profile-section .profile-name {
+body .main-frame .profile-section .photo .profile-name {
   width: 100%;
   position: absolute;
-  top: 28%;
-  left: 35%;
+  top: 90%;
+  left: 10%;
   z-index: 2;
-  border: 2px solid black;
 }
 
-body .main-frame .profile-section .profile-name h1 {
+body .main-frame .profile-section .photo .profile-name h1 {
   font-size: 1rem;
   top: 40%;
 }
 
-body .main-frame .profile-section .profile-name h2 {
+body .main-frame .profile-section .photo .profile-name h2 {
   font-size: 0.6rem;
   top: 70%;
 }
@@ -107,10 +116,19 @@ body .main-frame .profile-section .profile-name h2 {
 body .main-frame .profile-section .profile-info {
   position: absolute;
   top: 60%;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
 }
 
-body .main-frame .profile-section .profile-info li {
-  /*enlever les puces*/
+body .main-frame .profile-section .profile-info ul {
+  list-style-type: none;
+  line-height: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: gray;
 }
 
 body .main-frame .main-footer {
@@ -119,6 +137,9 @@ body .main-frame .main-footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  font-size: 1.2rem;
+  font-weight: bold;
 
   border: 2px solid black;
 }
