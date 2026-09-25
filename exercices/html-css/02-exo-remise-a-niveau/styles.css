@@ -43,6 +43,8 @@ body .main-frame {
   width: 80vw;
   height: 60vh;
 
+  --main-frame-height: 60vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,17 +142,14 @@ body .main-frame .main-footer {
 
   font-size: 1.2rem;
   font-weight: bold;
-
-  border: 2px solid black;
 }
 
-body .main-frame .main-footer main {
-  border: 2px solid red;
-}
-
-body .main-frame .main-footer main .main-p {
+body .main-frame .main-footer main p {
   width: 100%;
   margin: 20px auto;
+
+  text-align: justify;
+  text-justify: auto;
 }
 
 body .main-frame .main-footer footer {
@@ -159,11 +158,30 @@ body .main-frame .main-footer footer {
 
   display: flex;
   justify-content: space-around;
-
-  border: 2px solid yellow;
 }
 
 body .main-frame .main-footer footer .footer-img {
   width: 20px;
   height: 20px;
+}
+
+body .main-frame .sidebar-nav {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+body .main-frame .sidebar-nav a {
+  display: inline-block;
+  transform: rotate(-90deg);
+
+  color: gray;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+body .main-frame .sidebar-nav .nav-page-displayed {
+  color: black;
 }
