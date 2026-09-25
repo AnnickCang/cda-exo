@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Votre Nom</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container">
+        <a href="#" class="header__logo">VotreNom</a>
+        <button class="header__burger" id="burger" aria-label="Ouvrir le menu">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button>
+        <nav class="header__nav" id="nav">
+          <ul class="header__nav-list">
+            <li><a href="#accueil" class="header__nav-link">Accueil</a></li>
+            <li><a href="#a-propos" class="header__nav-link">A propos</a></li>
+            <li>
+              <a href="#competences" class="header__nav-link">Competences</a>
+            </li>
+            <li><a href="#projets" class="header__nav-link">Projets</a></li>
+            <li><a href="#contact" class="header__nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <button
+          class="header__theme-toggle"
+          id="theme-toggle"
+          aria-label="Changer le theme"
+        >
+          Sombre
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" id="accueil">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Bonjour, je suis <span class="hero__name">Votre Nom</span>
+        </h1>
+        <p class="hero__subtitle">Developpeur Web Junior</p>
+        <a href="#projets" class="hero__cta">Voir mes projets</a>
+      </div>
+    </section>
+
+    <section class="section" id="a-propos">
+      <div class="section__container">
+        <h2 class="section__title">A propos</h2>
+        <div class="about">
+          <img
+            src="https://placehold.co/300x300"
+            alt="Photo de profil"
+            class="about__photo"
+          />
+          <div class="about__text">
+            <p>
+              Presentez-vous ici en quelques lignes. Parlez de votre parcours,
+              de vos motivations et de ce qui vous passionne dans le
+              developpement web.
+            </p>
+            <p>
+              Ajoutez un second paragraphe si vous le souhaitez pour detailler
+              vos objectifs professionnels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="competences">
+      <div class="section__container">
+        <h2 class="section__title">Competences</h2>
+        <div class="skills">
+          <div class="skills__card">
+            <h3 class="skills__card-title">HTML5</h3>
+            <p class="skills__card-desc">
+              Structure semantique, accessibilite, formulaires
+            </p>
+          </div>
+          <div class="skills__card">
+            <h3 class="skills__card-title">CSS3</h3>
+            <p class="skills__card-desc">
+              Flexbox, Grid, animations, responsive design
+            </p>
+          </div>
+          <div class="skills__card">
+            <h3 class="skills__card-title">JavaScript</h3>
+            <p class="skills__card-desc">DOM, evenements, ES6+</p>
+          </div>
+          <div class="skills__card">
+            <h3 class="skills__card-title">Git</h3>
+            <p class="skills__card-desc">
+              Versionning, branches, collaboration
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projets">
+      <div class="section__container">
+        <h2 class="section__title">Mes Projets</h2>
+        <div class="projects">
+          <article class="projects__card">
+            <img
+              src="https://placehold.co/400x250"
+              alt="Capture du projet 1"
+              class="projects__card-img"
+            />
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">Projet 1</h3>
+              <p class="projects__card-desc">
+                Description courte du projet et des technologies utilisees.
+              </p>
+              <a href="#" class="projects__card-link">Voir le projet</a>
+            </div>
+          </article>
+          <article class="projects__card">
+            <img
+              src="https://placehold.co/400x250"
+              alt="Capture du projet 2"
+              class="projects__card-img"
+            />
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">Projet 2</h3>
+              <p class="projects__card-desc">
+                Description courte du projet et des technologies utilisees.
+              </p>
+              <a href="#" class="projects__card-link">Voir le projet</a>
+            </div>
+          </article>
+          <article class="projects__card">
+            <img
+              src="https://placehold.co/400x250"
+              alt="Capture du projet 3"
+              class="projects__card-img"
+            />
+            <div class="projects__card-body">
+              <h3 class="projects__card-title">Projet 3</h3>
+              <p class="projects__card-desc">
+                Description courte du projet et des technologies utilisees.
+              </p>
+              <a href="#" class="projects__card-link">Voir le projet</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="contact">
+      <div class="section__container">
+        <h2 class="section__title">Contact</h2>
+        <form class="contact-form" id="contact-form">
+          <div class="contact-form__group">
+            <label for="name">Nom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Votre nom"
+            />
+          </div>
+          <div class="contact-form__group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="votre@email.com"
+            />
+          </div>
+          <div class="contact-form__group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Votre message..."
+            ></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 VotreNom. Tous droits reserves.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
