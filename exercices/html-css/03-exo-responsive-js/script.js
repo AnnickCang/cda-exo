@@ -26,8 +26,22 @@ navLinks.forEach(function (navLink) {
 });
 
 // Ajouter ou supprimer le thème dark au body lors du clic sur le bouton "Sombre"
-const darkButton = document.getElementById("theme-toggle");
+const themeButton = document.getElementById("theme-toggle");
 const body = document.querySelector("body");
-darkButton.addEventListener("click", function () {
+themeButton.addEventListener("click", function () {
+  // Solution en récupérant le résultat de .toggle()
+  /*
+  let isDarkTheme = body.classList.toggle("dark");
+  if (isDarkTheme) {
+    themeButton.textContent = "Clair";
+  } else {
+    themeButton.textContent = "Sombre";
+  }*/
+  // Solution en utilisant .contains()
   body.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    themeButton.textContent = "Clair";
+  } else {
+    themeButton.textContent = "Sombre";
+  }
 });
