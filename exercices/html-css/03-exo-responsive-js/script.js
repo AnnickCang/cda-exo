@@ -45,3 +45,26 @@ themeButton.addEventListener("click", function () {
     themeButton.textContent = "Sombre";
   }
 });
+
+// Envoyer un message (envoi annulé par défaut) avec affichage de message (envoi réussi ou champ manquant)
+// Sélection du bouton en fonction de son type
+const submitButton = document.querySelector("button[type='submit']");
+submitButton.addEventListener("click", function (event) {
+  // Annuler l'envoi
+  event.preventDefault();
+
+  // Vérification des champs et affichage d'un message popup en fonction du remplissage ou non de ces champs
+  const nameText = document.getElementById("name");
+  const emailText = document.getElementById("email");
+  const messageText = document.getElementById("message");
+
+  if (
+    nameText.value === "" ||
+    emailText.value === "" ||
+    messageText.value === ""
+  ) {
+    alert("Tous les champs doivent être remplis !");
+  } else {
+    alert(`Merci ${nameText.value}, votre message a bien été envoyé`);
+  }
+});
