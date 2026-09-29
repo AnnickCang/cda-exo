@@ -1,0 +1,85 @@
+# TP1 : VARIABLES - PSEUDO-CODE
+
+## Exercice 1 : Conversion de températures
+
+DEBUT
+  VARIABLE tempDeg, tempFahr : REEL
+
+  ECRIRE("Entrez une température en degrés : ")
+  LIRE(tempCel)
+
+  tempFahr <- tempCel * 9 / 5 + 32
+  ECRIRE("Conversion en Fahrenheit : ", tempFahr)
+FIN
+
+## Exercice 2 : Calcul de prix TTC avec remise
+
+DEBUT
+  VARIABLE prixHT, prixTTC, prixFinal : REEL
+  VARIABLE tauxTVA, montantTVA : REEL
+  VARIABLE pourcentageRemise, montantRemise : REEL
+
+  ECRIRE("Prix HT de l'article : ")
+  LIRE(prixHT)
+  ECRIRE("Taux de TVA en % : ")
+  LIRE(tauxTVA)
+  ECRIRE("Pourcentage de remise : ")
+  LIRE(pourcentageRemise)
+
+  montantTVA <- prixHT * tauxTVA /100
+  prixTTC <- prixHT + montantTVA
+  montantRemise <- prixTTC * pourcentageRemise / 100
+  prixFinal <- prixTTC - montantRemise
+
+  ECRIRE("Prix HT : ", prixHT)
+  ECRIRE("TVA (%) : ", tauxTVA)
+  ECRIRE("Remise (%) : ", pourcentageRemise)
+  ECRIRE("Montant TVA : ", montantTVA)
+  ECRIRE("Prix TTC : ", prixTTC)
+  ECRIRE("Montant remise : ", montantRemise)
+  ECRIRE("Prix final : ", prixFinal)
+FIN
+
+## Exercice 3 : Echange de variables
+
+DEBUT
+  // Partie A : avec une variable temporaire
+  VARIABLE a, b, temp : ENTIER
+
+  a <- 5
+  b <- 3
+  ECRIRE("a = ", a, ", b = ", b)
+
+  temp <- a
+  a <- b
+  b <- temp
+
+  ECRIRE("a = ", a, ", b = ", b)
+FIN
+
+DEBUT
+  // Partie B : sans variable temporaire
+
+FIN
+
+DEBUT
+  // Partie C : avec la destructuration
+FIN
+
+## Exercice 4 : Calcul d'IMC avec interprétation
+
+DEBUT
+
+FIN
+
+## Exercice 5 : Devis peinture
+
+DEBUT
+
+FIN
+
+## Exercice 6 : Convertisseur de temps
+
+DEBUT
+
+FIN

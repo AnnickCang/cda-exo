@@ -1,0 +1,16 @@
+{
+  "name": "tp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tp1-exo1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Annick",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
