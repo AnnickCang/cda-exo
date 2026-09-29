@@ -69,17 +69,79 @@ FIN
 ## Exercice 4 : Calcul d'IMC avec interprétation
 
 DEBUT
+  VARIABLE poids, taille, valeurIMC : REEL
+  CONST imcInsuffisant, imcNormal, imcSurpoids : REEL
 
+  imcInsuffisant <- 18.5
+  imcNormal <- 24.9
+  imcSurpoids <- 29.9
+
+  ECRIRE("Poids : ")
+  LIRE(poids)
+  ECRIRE("Taille : ")
+  LIRE(taille)
+
+  // ARRONDIR_DECIMALE(valeur, x) -> pseudo-fonction pour arrondir "valeur" à x décimales
+  valeurIMC = ARRONDIR_DECIMALE(poids / (taille * taille), 1)
+
+  SI valeurIMC < imcInsuffisant
+    ECRIRE("Insuffisance pondérale")
+  SINON SI valeurIMC < imcNormal
+    ECRIRE("Poids normal")
+  SINON SI valeurIMC < imcSurpoids
+    ECRIRE("Surpoids")
+  SINON
+    ECRIRE("Obésité")
+  FIN SI
 FIN
 
 ## Exercice 5 : Devis peinture
 
 DEBUT
+  VARIABLE longueur, largeur, hauteur : REEL
+  VARIABLE surfaceBrute, surfaceNette, nbPotsPeinture, prixTotal, moduloPots : REEL
+  VARIABLE prixPotPeinture, surfaceCouverte, pourcentagePortesFenetres : REEL
 
+  prixPotPeinture <- 29.90
+  surfaceCouverte <- 10
+  pourcentagePortesFenetres <- 0.2
+
+  ECRIRE("Longueur de la surface : ")
+  LIRE(longueur)
+  ECRIRE("Largeur de la surface : ")
+  LIRE(largeur)
+  ECRIRE("Hauteur des murs : ")
+  LIRE(hauteur)
+
+  surfaceBrute <- (longueur * 2 + largeur * 2) * hauteur
+  surfaceNette <- surfaceBrute * (1 - pourcentagePortesFenetres)
+
+  // Division d'entiers pour avoir un résultat entier
+  nbPotsPeinture <- ENTIER(surfaceNette) / ENTIER(surfaceCouverte)
+  moduloPots <- surfaceNette MOD surfaceCouverte
+  SI moduloPots <> 0
+    nbPotsPeinture <- nbPotsPeinture + 1
+
+  prixTotal <- nbPotsPeinture * prixPotPeinture
+
+  ECRIRE("Surface nette : ", ARRONDIR_DECIMALE(surfaceNette, 2))
+  ECRIRE("Nombre de pots de peinture : ", nbPotsPeinture)
+  ECRIRE("Prix total : ", prixTotal)
 FIN
 
 ## Exercice 6 : Convertisseur de temps
 
 DEBUT
+  VARIABLE nbSecondesDepart, nbSecondesRestant : ENTIER
+  VARIABLE nbSecondes, nbMinutes, nbHeures : ENTIER
 
+  ECRIRE("Entrez le nombre de secondes : ")
+  LIRE(nbSecondesDepart)
+
+  nbHeures <- nbSecondesDepart / 3600
+  nbSecondesRestant <- nbSecondesDepart MOD 3600
+  nbMinutes <- nbSecondesRestant / 60
+  nbSecondes <- nbSecondesRestant MOD 60
+
+  ECRIRE("Cela fait : ", nbHeures, "H", nbMinutes, "min", nbSecondes, "sec")
 FIN
