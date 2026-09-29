@@ -1,0 +1,34 @@
+:root {
+  /*utiliser des variables pour avoir une palette communue de couleurs*/
+}
+
+/*
+paramètres à voir
+  position : relative;
+  overflow: hidden;
+  z-index: 1; la valeur la plus grande sera le plus en avant-plan
+  transform: rotate(-15deg); pour faire pivoter, redimensionner, incliner ou déplacer une forme
+  clip-path: polygon(coordonnées) -> pour sélectionner le morceau qui sera visible
+  object-fit: cover; -> pour définir si le contenu doit être redimansionné ou non pour s'adapter à son contenant
+  letter-spacing: 1px;
+  writing-mode: vertical-rl; -> pour changer le mode d'affichage du texte // si on le combine avec transform, on peut tourner le texte
+*/
+
+body {
+  /*
+  pour définir la hauteur en fonction de la hauteur de l'écran, ici correspond à 100% de la taille de la fenêtre
+  donc pas besoin de définir une hauteur en dur, la taille du body dépendra de la taille de l'écran, quel que soit l'écran
+  */
+  min-height: 100vh; /*viewport height*/
+  /*pour centrer le bodu*/
+  align-items: center;
+  justify-content: center;
+
+  /*
+
+  position: relative;
+
+  */
+  position: relative;
+  overflow: hidden;
+}
