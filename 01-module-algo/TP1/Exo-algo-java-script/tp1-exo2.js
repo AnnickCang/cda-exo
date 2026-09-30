@@ -23,3 +23,6 @@ console.log(`Montant TVA : ${montantTVA}`);
 console.log(`Prix TTC : ${prixTTC}`);
 console.log(`Montant remise : ${montantRemise}`);
 console.log(`Prix final : ${prixFinal}`);
+
+// UTILISER .toFixed(x) sur une variable de type Number pour TRONQUER la variable à x décimales
+// ATTENTION : .toFixed() renvoie un STRING

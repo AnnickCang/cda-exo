@@ -59,11 +59,21 @@ FIN
 
 DEBUT
   // Partie B : sans variable temporaire
+  VARIABLE a, b : ENTIER
+  
+  a <- 5
+  b <- 3
+  ECRIRE("a = ", a, ", b = ", b)
 
+  b <- a + b // b' = a + b
+  a <- b - a // a' = b' - a = (a + b) - a => a = b
+  b <- b - a // b" = b' - a' = (a + b) - b => b = a
+  ECRIRE("a = ", a, ", b = ", b)
 FIN
 
 DEBUT
   // Partie C : avec la destructuration
+  // En JavaScript
 FIN
 
 ## Exercice 4 : Calcul d'IMC avec interprétation
