@@ -1,0 +1,35 @@
+# TP2 - Conditions et boucles
+
+## Exercice 1 : Calculatrice simple
+
+DEBUT
+  VARIABLE nombre1, nombre2, operateur, resultat
+
+  ECRIRE("Entrez le 1er nombre : ")
+  LIRE(nombre1)
+  ECRIRE("Entrez le 2nd nombre : ")
+  LIRE(nombre2)
+  ECRIRE("Opération (+, -, *, /) : ")
+  LIRE(operateur)
+
+  TESTER(operateur)
+    CAS("+")
+      resultat <- nombre1 + nombre2
+      ECRIRE(nombre1, " + ", nombre2, " = ", resultat)
+    CAS("-")
+      resultat <- nombre1 - nombre2
+      ECRIRE(nombre1, " - ", nombre2, " = ", resultat)
+    CAS("*")
+      resultat <- nombre1 * nombre2
+      ECRIRE(nombre1, " * ", nombre2, " = ", resultat)
+    CAS("/")
+      SI nombre2 == 0
+        ECRIRE("Erreur : division par zéro")
+      SINON
+        resultat <- nombre1 / nombre2
+        ECRIRE(nombre1, " / ", nombre2, " = ", resultat)
+      FIN SI
+    AUTRE
+      ECRIRE("Erreur : opérateur inconnu")
+  FIN TESTER
+FIN
