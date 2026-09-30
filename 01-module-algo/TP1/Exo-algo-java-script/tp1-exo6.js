@@ -1,7 +1,7 @@
 console.log("TP1 - Exercice 6 : Convertisseur de temps");
 console.log("");
 
-let prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 let nbSecondesDepart, nbSecondesRestant;
 let nbSecondes, nbMinutes, nbHeures;
 

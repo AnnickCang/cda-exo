@@ -1,7 +1,7 @@
 console.log("TP1 - Exercice 5 : Devis peinture");
 console.log("");
 
-let prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 let longueur, largeur, hauteur;
 let surfaceBrute, surfaceNette, nbPotsPeinture, prixTotal, moduloPots;
 const prixPotPeinture = 29.9,

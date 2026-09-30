@@ -1,7 +1,6 @@
 console.log("TP1 - Exercice 3 : Echange de variables");
 console.log("");
 
-const prompt = require("prompt-sync");
 let a, b;
 
 console.log("Partie A : avec une variable temporaire");
