@@ -3,7 +3,8 @@
 ## Exercice 1 : Calculatrice simple
 
 DEBUT
-  VARIABLE nombre1, nombre2, operateur, resultat
+  VARIABLE nombre1, nombre2, resultat : REEL
+  VARIABLE operateur : CHAINE
 
   ECRIRE("Entrez le 1er nombre : ")
   LIRE(nombre1)

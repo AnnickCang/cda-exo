@@ -7,7 +7,7 @@ public class tp2 {
         scanner.useLocale(Locale.US);
 
         Boolean continuer = true;
-        int nombre1, nombre2, resultat;
+        double nombre1, nombre2, resultat;
         String operateur, reponseContinuer;
 
         while (continuer) {
