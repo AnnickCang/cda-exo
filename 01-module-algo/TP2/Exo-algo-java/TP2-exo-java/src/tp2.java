@@ -49,6 +49,7 @@ public class tp2 {
                 continuer = false;
             }
         }
+        scanner.close();
     }
 
     public static void exo2() {
@@ -82,6 +83,7 @@ public class tp2 {
                 System.out.println("Plus petit !");
             }
         } while(!gagne);
+        scanner.close();
     }
 
     public static void main(String[] args) {

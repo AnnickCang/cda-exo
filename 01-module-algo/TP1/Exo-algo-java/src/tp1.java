@@ -12,6 +12,8 @@ public class tp1 {
 
         tempFahr = tempCel * 9 / 5 + 32;
         System.out.print("Conversion en Fahrenheit : " + tempFahr);
+
+        scanner.close();
     }
 
     public static void exo2() {
@@ -41,6 +43,8 @@ public class tp1 {
         System.out.println("Prix TTC : " + prixTTC);
         System.out.println("Montant remise : " + montantRemise);
         System.out.println("Prix final : " + prixFinal);
+
+        scanner.close();
     }
 
     public static void exo3() {
@@ -67,6 +71,8 @@ public class tp1 {
         a = b - a;
         b = b - a;
         System.out.println("Après échange, a = " + a + " et b = " + b);
+
+        scanner.close();
     }
 
     public static void exo4() {
@@ -97,6 +103,8 @@ public class tp1 {
         } else {
             System.out.println("Vous êtes obèse");
         }
+
+        scanner.close();
     }
 
     public static void exo5() {
@@ -129,6 +137,8 @@ public class tp1 {
         System.out.printf("Surface nette : %.2f\n", Math.floor(surfaceNette));
         System.out.println("Nombre de pots de peinture : " + nbPotsPeinture);
         System.out.printf("Prix total : %.2f €", prixTotal);
+
+        scanner.close();
     }
 
     public static void exo6() {
@@ -148,6 +158,8 @@ public class tp1 {
 
         System.out.println();
         System.out.println("Cela fait : " + nbHeures + "H " + nbMinutes + "mmin " + nbSecondes + "sec");
+
+        scanner.close();
     }
 
     public static void main(String[] args) {
