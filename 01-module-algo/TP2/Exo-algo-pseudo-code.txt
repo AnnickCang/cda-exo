@@ -34,3 +34,37 @@ DEBUT
       ECRIRE("Erreur : opérateur inconnu")
   FIN TESTER
 FIN
+
+
+## Exercice 2 : Jeu "Plus grand / Plus petit"
+
+DEBUT
+  VARIABLE nombreMystere, nombre, nombreEssais : ENTIER
+  VARIABLE gagne : BOOLEEN
+
+  gagne <- FAUX
+  nombreEssais <- 0
+  // nombre aléatoire entr 1 et 100 choisi par l'ordinateur
+  nombreMystere <- ALEATOIRE(1, 100)
+
+  ECRIRE("Jeu : plus grand - plus petit")
+  ECRIRE("Devinez un nombre entre 1 et 100 en un minimum d'essais")
+
+  REPETER
+    nombreEssais <- nombreEssais + 1
+    ECRIRE("Nombre : ")
+    LIRE(nombre)
+
+    SI (nombre < 1 OU nombre > 100)
+      ECRIRE("Le nombre doit être compris entre 1 et 100 inclus")
+      nombreEssais <- nombreEssais - 1
+    SINON SI (nombre == nombreMystere)
+      gagne <- VRAI
+      ECRIRE("Bravo ! Trouvé en ", nombreEssais, " essais")
+    SINON SI (nombre < nombreMystere)
+      ECRIRE("Plus grand !")
+    SINON
+      ECRIRE("Plus petit !")
+    FIN SI
+  TANT QUE (gagne == FAUX)
+FIN

@@ -51,13 +51,50 @@ public class tp2 {
         }
     }
 
+    public static void exo2() {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+
+        int nombreMystere, nombre;
+        int nombreEssais = 0;
+        boolean gagne = false;
+
+        // Math.random() * N : génère un nombre décimal aléatoire entre 0 et N-1
+        nombreMystere = (int) ((Math.random() * 100) + 1);
+
+        System.out.println("Jeu : plus grand - plus petit");
+        System.out.println("Devinez un nombre entre 1 et 100 en un minimum d'essais");
+
+        do {
+            nombreEssais++;
+            System.out.print("Nombre : ");
+            nombre = scanner.nextInt();
+
+            if (nombre < 1 || nombre > 100) {
+                System.out.println("Le nombre doit être compris entre 1 et 100 inclus");
+                nombreEssais--;
+            } else if (nombre == nombreMystere) {
+                System.out.println("Bravo ! Trouvé en " + nombreEssais + " essais");
+                gagne = true;
+            } else if (nombre < nombreMystere) {
+                System.out.println("Plus grand !");
+            } else {
+                System.out.println("Plus petit !");
+            }
+        } while(!gagne);
+    }
+
     public static void main(String[] args) {
-        int choixExo = 1;
+        int choixExo = 2;
 
         switch (choixExo) {
             case 1:
                 System.out.println("TP2 - Exercice 1 : Calculatrice simple");
                 exo1();
+                break;
+            case 2:
+                System.out.println("TP2 - Exercice 2 : Jeu 'Plus grand / Plus petit'");
+                exo2();
                 break;
         }
     }
