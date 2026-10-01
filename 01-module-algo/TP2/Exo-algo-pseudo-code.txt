@@ -109,3 +109,69 @@ DEBUT
   FIN POUR
   ECRIRE(texte)
 FIN
+
+
+## Exercice 4 : Validation de mot de passe
+
+// Pour les fonctions ci-dessous, je considère que je réutiliserai une fonction standard (si elle existe, ou une autre méthode) 
+// de JavaScript ou Java qui retourne un booléen pour vérifier la condition demandée
+
+DEBUT FONCTION aLaTailleMinimale(motDePasse : CHAINE) : BOOLEEN
+  RETOURNER (LONGUEUR(motDePasse) >= 8)
+FIN FONCTION
+
+DEBUT FONCTION contientMajuscule(motDePasse : CHAINE) : BOOLEEN
+  RETOURNER (MAJUSCULE(motDePasse))
+FIN FONCTION
+
+DEBUT FONCTION contientMinuscule(motDePasse : CHAINE) : BOOLEEN
+  RETOURNER (MINUSCULE(motDePasse))
+FIN FONCTION
+
+DEBUT FONCTION contientChiffre(motDePasse : CHAINE) : BOOLEEN
+  RETOURNER (CHIFFRE(motDePasse))
+FIN FONCTION
+
+DEBUT
+  VARIABLE motDePasse : CHAINE
+  VARIABLE valide : BOOLEEN
+
+  valide <- VRAI
+
+  ECRIRE("Mot de passe : ")
+  LIRE(motDePasse)
+
+  SI aLaTailleMinimale(motDePasse)
+    ECRIRE("Longueur >= 8 : V")
+  SINON
+    valide <- FAUX
+    ECRIRE("Longueur >= 8 : X")
+  FIN SI
+
+  SI contientMajuscule(motDePasse)
+    ECRIRE("Majuscule : V")
+  SINON
+    valide <- FAUX
+    ECRIRE("Majuscule : X")
+  FIN SI
+
+  SI contientMinuscule(motDePasse)
+    ECRIRE("Minsucule : V")
+  SINON
+    valide <- FAUX
+    ECRIRE("Minsucule : X")
+  FIN SI
+
+  SI contientChiffre(motDePasse)
+    ECRIRE("Chiffre : V")
+  SINON
+    valide <- FAUX
+    ECRIRE("Chiffre : X")
+  FIN SI
+
+  SI valide
+    ECRIRE("Valide ? V")
+  SINON
+    ECRIRE("Valide ? X")
+  FIN SI
+FIN

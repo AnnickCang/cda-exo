@@ -112,8 +112,101 @@ public class tp2 {
         System.out.println(texte);
     }
 
+    static boolean aLaTailleMinimale(String chaine) {
+        return (chaine.length() >= 8);
+    }
+
+    static boolean contientMajuscule(String chaine) {
+        for (int i = 0; i < chaine.length(); i++) {
+            if (Character.isUpperCase(chaine.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static boolean contientMinuscule(String chaine) {
+        for (int i = 0; i < chaine.length(); i++) {
+            if (Character.isLowerCase(chaine.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    static boolean contientChiffre(String chaine) {
+        for (int i = 0; i < chaine.length(); i++) {
+            if (Character.isDigit(chaine.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void exo4() {
+        Scanner scanner = new Scanner(System.in);
+        boolean valide = true;
+        String mdp;
+
+        System.out.print("Mot de passe : ");
+        mdp = scanner.next();
+
+        if (aLaTailleMinimale(mdp)) {
+            System.out.println("Longueur >= 8 : V");
+        } else {
+            valide = false;
+            System.out.println("Longueur >= 8 : X");
+        }
+        if (contientMajuscule(mdp)) {
+            System.out.println("Majuscule : V");
+        } else {
+            valide = false;
+            System.out.println("Majuscule : X");
+        }
+        if (contientMinuscule(mdp)) {
+            System.out.println("Minuscule : V");
+        } else {
+            valide = false;
+            System.out.println("Minuscule : X");
+        }
+        if (contientChiffre(mdp)) {
+            System.out.println("Chiffre : V");
+        } else {
+            valide = false;
+            System.out.println("Chiffre : X");
+        }
+
+        if (valide) {
+            System.out.println("Valide ? V");
+        } else {
+            System.out.println("Valide ? X");
+        }
+        scanner.close();
+    }
+
+    public static void exo4bis() {
+    // Avec des opérateurs ternaires
+        Scanner scanner = new Scanner(System.in);
+        boolean longueurOK, majusculeOK, minusculeOK, chiffreOK;
+        String mdp;
+
+        System.out.print("Mot de passe : ");
+        mdp = scanner.next();
+
+        longueurOK = aLaTailleMinimale(mdp);
+        majusculeOK = contientMajuscule(mdp);
+        minusculeOK = contientMinuscule(mdp);
+        chiffreOK = contientChiffre(mdp);
+
+        System.out.println("Longueur >= 8 : " + (longueurOK ? "V" : "X"));
+        System.out.println("Majuscule : " + (majusculeOK? "V" : "X"));
+        System.out.println("Minuscule : " + (minusculeOK? "V" : "X"));
+        System.out.println("Chiffre : " + (chiffreOK? "V" : "X"));
+        System.out.println("Valide ? " + ((longueurOK && majusculeOK && minusculeOK && chiffreOK)? "V" : "X"));
+    }
+
     public static void main(String[] args) {
-        int choixExo = 3;
+        int choixExo = 4;
 
         switch (choixExo) {
             case 1:
@@ -127,6 +220,11 @@ public class tp2 {
             case 3:
                 System.out.println("TP2 - Exercice 3 : FizzBuzz amélioré");
                 exo3();
+                break;
+            case 4:
+                System.out.println("TP2 - Exercice 4 : Validation de mot de passe");
+                //exo4();
+                exo4bis();
                 break;
         }
     }
