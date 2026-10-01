@@ -1,6 +1,13 @@
 # Editor settings
 .vscode/
 
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java build output
+out/
+
 # Dependency directories
 node_modules/
 
