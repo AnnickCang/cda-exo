@@ -68,3 +68,44 @@ DEBUT
     FIN SI
   TANT QUE (gagne == FAUX)
 FIN
+
+Pattern d'algorithme utilisé : sentinelle
+Stratégie optimale pour minimiser le nombre d'essais : dichotomie
+Nombre maximum d'essais pour trouver un nombre entre 1 et 100 avec la dichotomie : 7
+
+
+## Exercice 3 : FizzBuzz amélioré
+
+DEBUT
+  FONCTION getFizzbuzzResult(nombre : ENTIER) : CHAINE
+  DEBUT
+    VARIABLE texte : CHAINE
+
+    texte <- ""
+
+    SI ((nombre MOD 3) = 0)
+      texte <- texte + "Fizz"
+    FIN SI
+    SI ((nombre MOD 5) = 0)
+      texte <- texte + "Buzz"
+    FIN SI
+    SI ((nombre MOD 7) = 0)
+      texte <- texte + "Wazz"
+    FIN SI
+    SI (texte = "")
+      texte <- (CHAINE) nombre // nombre est casté en CHAINE
+    FIN SI
+
+    RETOURNER texte
+  FIN
+
+  VARIABLE i : ENTIER
+  VARIABLE texte : CHAINE
+  
+  texte <- ""
+
+  POUR i ALLANT DE 1 A 21 FAIRE
+    texte <- textte + getFizzbuzzResult(i)
+  FIN POUR
+  ECRIRE(texte)
+FIN
