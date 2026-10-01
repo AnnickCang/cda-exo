@@ -86,8 +86,34 @@ public class tp2 {
         scanner.close();
     }
 
+    static String getFizzbuzzResult(int nombre) {
+        String texte = "";
+
+        if ((nombre % 3) == 0) {
+            texte += "Fizz";
+        }
+        if ((nombre % 4) == 0) {
+            texte += "Buzz";
+        }
+        if ((nombre % 7) == 0) {
+            texte += "Wazz";
+        }
+        if (texte == "") {
+            texte = String.valueOf(nombre);
+        }
+        return texte;
+    }
+    public static void exo3() {
+        String texte = "";
+
+        for (int i = 1; i < 22; i++) {
+            texte += getFizzbuzzResult(i) + " ";
+        }
+        System.out.println(texte);
+    }
+
     public static void main(String[] args) {
-        int choixExo = 2;
+        int choixExo = 3;
 
         switch (choixExo) {
             case 1:
@@ -97,6 +123,10 @@ public class tp2 {
             case 2:
                 System.out.println("TP2 - Exercice 2 : Jeu 'Plus grand / Plus petit'");
                 exo2();
+                break;
+            case 3:
+                System.out.println("TP2 - Exercice 3 : FizzBuzz amélioré");
+                exo3();
                 break;
         }
     }
