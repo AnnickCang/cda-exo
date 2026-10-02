@@ -205,8 +205,38 @@ public class tp2 {
         System.out.println("Valide ? " + ((longueurOK && majusculeOK && minusculeOK && chiffreOK)? "V" : "X"));
     }
 
+    public static void exo5() {
+        int nbTablesMultiplication = 5;
+        String ligneResultats, ligneEntete;
+        int largeurCase = ((String) (nbTablesMultiplication ** 2)).length + 1;
+        int largeurColonneEntete = ((String) nbTablesMultiplication).length + 2;
+        //String.format("%3s", " ")
+        ligneEntete = "".format("%" + largeurColonneEntete + "s", " ") + "| ";
+        for (int i = 1; i < nbTablesMultiplication + 1; i++) {
+            ligneEntete += ((String) i).format("%" + largeurCase + "s", " ");
+        }
+        System.out.print(ligneEntete);
+        System.out.print("-".repeat(ligneEntete.length + 3));
+    }
+    /*
+// Ligne d'entête
+ligneEntete = "".padStart(largeurColonneEntete, " ") + "| ";
+for (let i = 1; i < nbTablesMultiplication + 1; i++) {
+  ligneEntete += i.toString().padStart(largeurCase, " ");
+}
+console.log(ligneEntete);
+console.log("-".repeat(ligneEntete.length + 3));
+
+for (let i = 1; i < nbTablesMultiplication + 1; i++) {
+  ligneResultats = (i.toString() + " ").padStart(largeurColonneEntete, " ") + "| ";
+  for (let j = 1; j < nbTablesMultiplication + 1; j++) {
+    ligneResultats += (i * j).toString().padStart(largeurCase, " ");
+  }
+  console.log(ligneResultats);
+}
+     */
     public static void main(String[] args) {
-        int choixExo = 4;
+        int choixExo = 5;
 
         switch (choixExo) {
             case 1:
@@ -225,6 +255,10 @@ public class tp2 {
                 System.out.println("TP2 - Exercice 4 : Validation de mot de passe");
                 //exo4();
                 exo4bis();
+                break;
+            case 5:
+                System.out.println("TP2 - Exercice 5 : Table de multiplication formatée");
+                exo5();
                 break;
         }
     }
