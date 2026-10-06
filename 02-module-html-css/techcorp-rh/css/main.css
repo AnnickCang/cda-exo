@@ -1,0 +1,13 @@
+/* point d'entrée, importe tous les autres css */
+
+/*
+L'ordre d'importation a une importance (le dernier lu sera celui qui sera utilisé, donc il écrasera
+les propriétés précédentes si elles apparaissent dans plusieurs fichiers)
+*/
+@import uri("reset.css");
+tokens
+theme
+base
+layout
+Component
+utilities

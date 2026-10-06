@@ -1,0 +1,16 @@
+/* Placement des zones : display, ... */
+
+/*
+Pour harmoniser toutes les pages (la majorité) :
+  - la barre de navigation toujours en haut
+  - toujours deux colonnes
+  - etc...
+*/
+
+/*
+.card stat  TOUJOURS 2 CLASSES AU MOINS : une générique et une pour le nom "réel" de l'encadré, à quoi elle correspond
+.card__title --> stat__title ET PAS card__title
+.card__nb-jours
+.card__timeline-ico
+.card__timeline-text
+*/
