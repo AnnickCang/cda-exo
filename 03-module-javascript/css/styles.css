@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+
+  background: #eef2f7;
+}
+
+.reservation {
+  width: 420px;
+
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.ligne {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+
+  padding: 13px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  background-color: #2563eb;
+  columns: white;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.resultat {
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #ddd;
+}
+
+.resultat p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  margin-top: 20px;
+
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-between;
+
+  background: #eff6ff;
+
+  border-radius: 8px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#message {
+  display: block;
+
+  margin-top: 15px;
+
+  text-align: center;
+
+  font-weight: bold;
+}

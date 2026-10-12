@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="css/styles.css"
+      media="screen"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <main class="reservation">
+      <h1>Réservation</h1>
+      <div class="ligne">
+        <label>Nombre de billets</label>
+        <input id="quantite" type="number" value="3" />
+      </div>
+
+      <div class="ligne">
+        <label>Tarif réduit</label>
+        <select id="tarifReduit">
+          <option value="non">Non</option>
+          <option value="oui">Oui</option>
+        </select>
+      </div>
+
+      <div class="ligne">
+        <label>Assurance</label>
+        <select id="assurance">
+          <option value="non">Non</option>
+          <option value="oui">Oui</option>
+        </select>
+      </div>
+
+      <div class="ligne">
+        <label>Code de promotion</label>
+        <input type="text" id="codePromo" />
+      </div>
+
+      <button id="calculer">Calculer le prix</button>
+
+      <section class="resultat">
+        <p>
+          Sous-total :
+          <strong id="sousTotal">0 €</strong>
+        </p>
+
+        <p>
+          Réduction :
+          <strong id="reduction">0 €</strong>
+        </p>
+
+        <p>
+          Assurance :
+          <strong id="prixAssurance">0 €</strong>
+        </p>
+
+        <p>
+          Frais :
+          <strong id="frais">0 €</strong>
+        </p>
+
+        <p>
+          Total :
+          <span id="total">0 €</span>
+        </p>
+
+        <p id="message"></p>
+      </section>
+    </main>
+    <script src="js/script-resa.js"></script>
+  </body>
+</html>
