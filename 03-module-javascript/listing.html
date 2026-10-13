@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Résultats des stagiaires</title>
+    <link rel="stylesheet" href="css/listing.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Résultats des stagiaires</h1>
+
+      <section class="stats">
+        <div class="carte">
+          <span>Nombre de stagiaires</span>
+          <strong id="nombre">0</strong>
+        </div>
+
+        <div class="carte">
+          <span>Admis</span>
+          <strong id="admis">0</strong>
+        </div>
+
+        <div class="carte">
+          <span>Moyenne du groupe</span>
+          <strong id="moyenne">0</strong>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="tous">Tous les stagiaires</button>
+
+        <button id="admisSeulement">Admis uniquement</button>
+      </section>
+
+      <section class="recherche">
+        <input id="prenom" type="text" placeholder="Prénom" />
+
+        <button id="rechercher">Rechercher</button>
+
+        <p id="resultatRecherche"></p>
+      </section>
+
+      <section>
+        <h2>Liste</h2>
+
+        <div id="liste"></div>
+      </section>
+    </main>
+    <script src="js/listing.js"></script>
+  </body>
+</html>
