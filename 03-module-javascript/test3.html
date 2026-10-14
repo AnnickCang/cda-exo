@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .content {
+        width: 500px;
+        height: 500px;
+        background: #ccc;
+        margin: auto auto;
+        position: relative;
+      }
+      .carre-rouge {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        top: 300px;
+        left: 0;
+      }
+      .carre-vert {
+        width: 50px;
+        height: 50px;
+        color: white;
+        background-color: green;
+        border-radius: 10px;
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        cursor: pointer;
+
+        font-weight: bold;
+        font-size: 60px;
+
+        display: flex;
+        justify-items: center;
+        align-items: center;
+      }
+      .bouge {
+        left: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="child carre-rouge" id="rouge"></div>
+      <div class="child carre-vert" id="vert">></div>
+    </div>
+    <script src="js/test3.js"></script>
+  </body>
+</html>

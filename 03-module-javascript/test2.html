@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .content {
+        width: 500px;
+        height: 500px;
+        background: #ccc;
+        margin: 50px auto;
+        position: relative;
+        border-radius: 50px 50px 0;
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+        background: #900;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .oeil {
+        left: 50px;
+        top: 50px;
+      }
+      .oeil2 {
+        right: 50px;
+        top: 50px;
+      }
+      .child.bouche {
+        bottom: 50px;
+        left: 50px;
+        width: 410px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="child oeil"></div>
+      <div class="child oeil2"></div>
+      <div class="child bouche"></div>
+    </div>
+  </body>
+</html>
