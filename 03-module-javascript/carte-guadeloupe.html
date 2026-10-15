@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carte de la Guadeloupe</title>
+    <link type="text/css" rel="stylesheet" href="css/carte-guadeloupe.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/carte-guadeloupe.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Carte de la Guadeloupe</h1>
+      <div class="carte">
+        <img src="img/carte-guadeloupe.png" alt="carte de la Guadeloupe" />
+        <div class="point-sur-carte" id="pointDeshaies"></div>
+        <div class="point-sur-carte" id="pointPointe-Noire"></div>
+        <div class="point-sur-carte" id="pointBouillante"></div>
+        <div class="point-sur-carte" id="pointVieux-Habitants"></div>
+        <div class="point-sur-carte" id="pointBasse-Terre"></div>
+        <div class="point-sur-carte" id="pointVieux-Fort"></div>
+        <div class="point-sur-carte" id="pointGoyave"></div>
+        <div class="point-sur-carte" id="pointPetit-Bourg"></div>
+      </div>
+      <div id="villes">
+        <ul id="villes-col1">
+          <li class="ville-survolee" id="villeDeshaies">Deshaies</li>
+          <li class="ville-survolee" id="villePointe">Pointe-Noire</li>
+          <li class="ville-survolee" id="villeBouillante">Bouillante</li>
+          <li class="ville-survolee" id="villeVieuxHabitants">
+            Vieux-Habitants
+          </li>
+        </ul>
+        <ul id="villes-col2">
+          <li class="ville-survolee" id="villeBasseTerre">Basse-Terre</li>
+          <li class="ville-survolee" id="villeVieuxFort">Vieux-Fort</li>
+          <li class="ville-survolee" id="villeGoyave">Goyave</li>
+          <li class="ville-survolee" id="villePetitBourg">Petit-Bourg</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+      $(function () {
+        $("button").on("click", function () {
+          // Ces deux méthodes vont récupérer la valeur de data-* (ici data-ville et data-region)
+
+          //Data-* en JS
+          let bouton = document.querySelector("#local");
+          alert(bouton.dataset.ville);
+
+          //en JQuery
+          let region = $("#globale").data("region");
+          alert(region);
+        });
+      });
+    </script>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+      }
+      div {
+        background: #900;
+        color: #fff;
+        padding: 10px;
+        margin: 40px auto;
+        width: 300px;
+        text-align: center;
+      }
+      button {
+        display: block;
+        width: 250px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button>INFO</button>
+    <div data-ville="Lyon-France" id="local">Ville</div>
+    <div data-region="Auvergne Rhône-Alpes" id="globale">Région</div>
+  </body>
+</html>

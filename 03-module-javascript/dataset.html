@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie interactive</title>
+    <link rel="stylesheet" href="css/dataset.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/dataset.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Galerie interactive</h1>
+      <div class="gallerie">
+        <div class="photo" data-img="img/chat1.png" data-nom="Chat 1">
+          <img src="img/chat1.png" class="image" id="img1" />
+          <div class="nom-image">Chat 1</div>
+        </div>
+        <div class="photo" data-img="img/chat2.png" data-nom="Chat 2">
+          <img src="img/chat2.png" class="image" id="img2" />
+          <div class="nom-image">Chat 2</div>
+        </div>
+        <div class="photo" data-img="img/chat3.png" data-nom="Chat 3">
+          <img src="img/chat3.png" class="image" id="img3" />
+          <div class="nom-image">Chat 3</div>
+        </div>
+      </div>
+      <div id="overlay"></div>
+      <dialog id="fenetreModale">
+        <div class="contenuDeModale">
+          <button id="fermerModale">&times;</button>
+          <img id="imageAgrandie" />
+          <p id="imageAgrandieNom"></p>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>

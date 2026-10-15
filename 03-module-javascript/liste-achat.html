@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste achats</title>
+    <link rel="stylesheet" href="css/liste-achat.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/liste-achat.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <img src="img/chat2.png" alt="Image" id="image" />
+      </section>
+      <section class="card">
+        <h1>Casque Bluetooth</h1>
+        <h2>89.90 €</h2>
+        <button type="button" id="voir-detail">Voir les détails</button>
+        <div id="details"></div>
+        <hr />
+        <div id="panier">
+          <label>Quantité</label>
+          <input type="text" value="0" />
+          <button type="button">Ajouter au panier</button>
+        </div>
+        <p id="quantite-ajoute"></p>
+      </section>
+    </main>
+  </body>
+</html>

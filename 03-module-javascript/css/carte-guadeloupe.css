@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+main {
+  width: 800px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+}
+
+.carte {
+  position: relative;
+}
+
+.point-sur-carte {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.point-sur-carte-selection {
+  background-color: yellow;
+}
+
+#pointDeshaies {
+  position: absolute;
+  top: 150px;
+  left: 10px;
+}
+
+#pointPointe-Noire {
+  position: absolute;
+  top: 200px;
+  left: 15px;
+}
+
+#pointBouillante {
+  position: absolute;
+  top: 250px;
+  left: 25px;
+}
+
+#pointVieux-Habitants {
+  position: absolute;
+  top: 300px;
+  left: 25px;
+}
+
+#pointBasse-Terre {
+  position: absolute;
+  top: 340px;
+  left: 40px;
+}
+
+#pointVieux-Fort {
+  position: absolute;
+  top: 370px;
+  left: 70px;
+}
+
+#pointGoyave {
+  position: absolute;
+  top: 270px;
+  left: 150px;
+}
+
+#pointPetit-Bourg {
+  position: absolute;
+  top: 220px;
+  left: 140px;
+}
+
+#villes {
+  display: flex;
+  gap: 50px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.ville-survolee {
+  cursor: pointer;
+}
+
+.ville-selectionne {
+  background-color: yellow;
+}

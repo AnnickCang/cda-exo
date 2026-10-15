@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <style>
+      #boite {
+        width: 500px;
+        height: 500px;
+        top: 100px;
+        left: 100px;
+        border: 1px solid black;
+        background-color: red;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        $("#hide").click(function () {
+          $("p").hide(500);
+        });
+        $("#show").click(function () {
+          $("p").show(900);
+        });
+
+        $("#anime").on("click", function () {
+          $("#boite").animate(
+            {
+              left: "200px",
+              opacity: 0.5,
+              width: "200px",
+            },
+            800,
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>Test de paragraphe</p>
+    <button id="hide">Cacher</button>
+    <button id="show">Montrer</button>
+    <div id="boite"></div>
+    <button id="anime">Animer</button>
+  </body>
+</html>
