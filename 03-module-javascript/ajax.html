@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+  <body>
+    <h1>Test Ajax</h1>
+
+    <button id="charger">Charger les données</button>
+
+    <div id="resultat"></div>
+
+    <script>
+      $("#charger").on("click", function () {
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/posts/1",
+          method: "GET",
+          dataType: "json",
+        })
+
+          .done(function (donnees) {
+            console.log(donnees);
+            $("#resultat").html(`
+            <h2>${donnees.title}</h2>
+            <p>${donnees.body}</p>
+          `);
+          })
+
+          // xhr : nom de variable, historiquement on l'appelait "xhr", mais on peut lui donner n'importe quel autre nom
+          .fail(function (xhr) {
+            console.error("ErreurHTTP :", xhr.status);
+            $("#resultat").text("Impossible de charger les données.");
+          });
+      });
+    </script>
+  </body>
+</html>

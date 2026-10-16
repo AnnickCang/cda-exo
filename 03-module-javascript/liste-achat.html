@@ -14,17 +14,23 @@
         <img src="img/chat2.png" alt="Image" id="image" />
       </section>
       <section class="card">
-        <h1>Casque Bluetooth</h1>
-        <h2>89.90 €</h2>
-        <button type="button" id="voir-detail">Voir les détails</button>
-        <div id="details"></div>
+        <div id="produit">
+          <h1 id="nomProduit"></h1>
+          <div>
+            <button type="button" class="btnProduit" id="btnPrec"><</button>
+            <button type="button" class="btnProduit" id="btnSuiv">></button>
+          </div>
+        </div>
+        <h2 id="prixProduit"></h2>
+        <button type="button" id="btnDetails">Afficher les détails</button>
+        <p id="details"></p>
         <hr />
         <div id="panier">
           <label>Quantité</label>
-          <input type="text" value="0" />
-          <button type="button">Ajouter au panier</button>
+          <input type="number" value="0" id="quantite" />
+          <button type="button" id="btnAjouter">Ajouter au panier</button>
         </div>
-        <p id="quantite-ajoute"></p>
+        <p id="info-panier"></p>
       </section>
     </main>
   </body>
