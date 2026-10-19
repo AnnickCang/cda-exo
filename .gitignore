@@ -1,6 +1,9 @@
 # Editor settings
 .vscode/
 
+# sauf ce fichier
+!vscode/extensions.json
+
 # IntelliJ IDEA
 .idea/
 *.iml
