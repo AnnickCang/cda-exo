@@ -1,0 +1,17 @@
+<article class="card">
+  <h3 class="card__name">
+    {{ employee().firstName }} {{ employee().lastName }}
+    <!-- aria-hidden="true" : pour masquer les initiales pour la lecture de la liseuse (juste décoratif) -->
+    <span class="initiales" aria-hidden="true">{{ initials() }}</span>
+  </h3>
+  <p class="card__job">{{ employee().job }}</p>
+  @if (noPlace() !== -1) {
+    <p>{{ noPlace() + 1 }} / {{ totalCollegues() }}</p>
+  }
+  @if (!compact()) {
+    <p>{{ employee().department }}</p>
+    <!-- Liaison de propriete : l'adresse du lien est construite a partir des donnees. -->
+    <a [href]="'mailto:' + employee().email">{{ employee().email }}</a>
+    <app-status-badge [remote]="employee().remote" />
+  }
+</article>

@@ -1,0 +1,52 @@
+<h1 id="team-title">L'équipe</h1>
+
+<section aria-labelledby="team-title">
+  <!-- [( )] : la recherche circule dans les deux sens entre App et SearchBox. -->
+  <h3>Recherche de collègues</h3>
+  <app-search-box [(query)]="search" />
+  <p>Nom recherché : {{ search() }}</p>
+  <p aria-live="polite">{{ filteredEmployees().length }} collègue(s) affiché(s)</p>
+  <ul class="team">
+    @for (emp of filteredEmployees(); track emp.id) {
+      <li>
+        <app-employee-card [employee]="emp" />
+      </li>
+    } @empty {
+      <li>Aucun collègue ne correspond à "{{ search() }}"</li>
+    }
+  </ul>
+
+  <h3>Liste des collègues</h3>
+  <ul class="team">
+    <!--
+    track permet à Angular de sauvegarder cet id unique à un élément de la liste parcourue
+    afin de pouvoir mettre à jour un élément en particulier qui a été modifié (performance : évite de tout détruire et tout recréer)
+
+    employees est devenu employees() car il a été transformé en signal
+    -->
+    @for (emp of store.employees(); track emp.id) {
+      <li>
+        <app-employee-card
+          [employee]="emp"
+          [compact]="false"
+          [noPlace]="$index"
+          [totalCollegues]="$count"
+        />
+        <!-- aria-label : sans lui, le lecteur d'ecran annonce trois boutons "Retirer"
+             sans dire lequel retire qui. -->
+        <button
+          type="button"
+          class="remove"
+          [attr.aria-label]="'Retirer ' + emp.firstName + ' ' + emp.lastName"
+          (click)="remove(emp.id)"
+        >
+          Retirer
+        </button>
+      </li>
+    } @empty {
+      <!-- Si le tableau est vide -->
+      <li>Aucun collègue pour le moment.</li>
+    }
+  </ul>
+  <p>{{ store.employees().length }} collègues, dont {{ nbRemoteColleagues() }} en télétravail</p>
+</section>
