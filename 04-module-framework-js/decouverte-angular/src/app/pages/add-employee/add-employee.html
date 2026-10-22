@@ -8,5 +8,22 @@
     <input id="first-name" name="firstName" [(ngModel)]="firstName" />
   </div>
 
-  <div class="forme"></div>
+  <div class="field">
+    <label for="last-name">Nom</label>
+    <input id="last-name" name="lastName" [(ngModel)]="lastName" />
+  </div>
+
+  <div class="field">
+    <label for="email">E-mail</label>
+    <input id="email" name="email" [(ngModel)]="email" />
+  </div>
+
+  <div class="field">
+    <label for="job">Poste</label>
+    <input id="job" name="job" [(ngModel)]="job" />
+  </div>
+
+  <p>Aperçu : {{ firstName() }} {{ lastName() }}, {{ job() }}</p>
+
+  <button type="submit">Ajouter</button>
 </form>
