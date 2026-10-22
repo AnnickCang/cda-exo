@@ -1,5 +1,13 @@
 import { Component, signal, inject } from '@angular/core';
-import { FormField, form } from '@angular/forms/signals';
+import {
+  FormField,
+  FormRoot,
+  form,
+  email,
+  maxLength,
+  minLength,
+  required,
+} from '@angular/forms/signals';
 import { MatButton } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { TeamStore } from '../../team-store';
@@ -25,7 +33,7 @@ const EMPTY_DRAFT: EmployeeDraft = {
 };
 
 @Component({
-  imports: [FormField, MatButton], // Les services n'ont pas besoin de se trouver la liste des imports
+  imports: [FormField, FormRoot, MatButton], // Les services n'ont pas besoin de se trouver la liste des imports
   selector: 'app-add-employee',
   styleUrl: './add-employee.css',
   templateUrl: './add-employee.html',
@@ -42,5 +50,37 @@ export class AddEmployee {
   private readonly draft = signal<EmployeeDraft>({ ...EMPTY_DRAFT });
 
   // 2. Le formulaire : un champ par propriété du modèle.
-  protected readonly employeeForm = form(this.draft);
+  protected readonly employeeForm = form(
+    this.draft,
+    // Le schéma : les règles de validation de chaque champ.
+    (path) => {
+      required(path.firstName, { message: 'Le prénom est obligatoire.' });
+      required(path.lastName, { message: 'Le nom est obligatoire' });
+      minLength(path.lastName, 2, { message: 'Le nom doit contenir au moins 2 lettres.' });
+      required(path.email, { message: "L'e-mail est obligatoire." });
+      email(path.email, {
+        message: "L'e-mail n'est pas valide (exemple : prenom.nom@techcorp.fr).",
+      });
+      required(path.job, { message: 'Le poste est obligatoire.' });
+      maxLength();
+    },
+    {
+      // 3. L'action de soumission : appelée à l'envoi du formulaire.
+      //    async : elle pourrait attendre une réponse d'API.
+      submission: {
+        action: async () => this.save(),
+      },
+    },
+  );
+
+  protected resetForm(): void {
+    // reset() remet les valeurs ET efface l'état "touché" des champs.
+    this.employeeForm().reset({ ...EMPTY_DRAFT });
+  }
+
+  protected async save(): Promise<void> {
+    this.store.add(this.draft());
+    this.resetForm();
+    await this.router.navigate(['/equipe']);
+  }
 }
