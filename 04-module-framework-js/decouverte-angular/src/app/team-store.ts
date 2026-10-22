@@ -55,4 +55,9 @@ export class TeamStore {
     // Mise à jour de la liste des employés en la remplaçant par une nouvelle liste filtrée (toute la liste sauf l'employé avec l'id passé en paramètre)
     this.employeesSignal.update((list) => list.filter((emp) => emp.id !== id));
   }
+
+  findById(id: number): Employee | undefined {
+    const emp = this.employeesSignal().find((empRecherche) => empRecherche.id === id);
+    return emp;
+  }
 }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
+import { MatButton } from '@angular/material/button';
+import { MatToolbar } from '@angular/material/toolbar';
 
-// Un type qui n'accepte que ces trois textes : une faute de frappe sera refusée.
-//type Status = 'sur site' | 'en télétravail' | 'absent';
 @Component({
-  imports: [RouterOutlet, RouterLinkActive, RouterLinkWithHref],
+  imports: [MatButton, MatToolbar, RouterLink, RouterOutlet, RouterLinkActive, RouterLinkWithHref],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

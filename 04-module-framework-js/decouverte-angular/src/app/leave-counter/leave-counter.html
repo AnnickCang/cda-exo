@@ -1,22 +1,44 @@
-<p>Jours posés : {{ daysTaken() }} sur {{ totalDays }}</p>
-<!-- aria-live : le lecteur d'ecran annonce le nouveau solde. -->
-<p aria-live="polite" [class.counter--empty]="isEmpty()">Jours restants : {{ remainingDays() }}</p>
-<!-- Code mis en commentaire car on gère avec un affichage coloré dans la balise
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Solde</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Jours posés : {{ daysTaken() }} sur {{ totalDays }}</p>
+    <!-- aria-live : le lecteur d'ecran annonce le nouveau solde. -->
+    <p aria-live="polite" [class.counter--empty]="isEmpty()">
+      Jours restants : {{ remainingDays() }}
+    </p>
+    <!-- Code mis en commentaire car on gère avec un affichage coloré dans la balise
   @if (isEmpty()) {
     <p>Vous avez posé tous vos jours de congés.</p>
   }
 -->
-<p>Vous avez utilisé {{ usedPercent() }}% de vos congés</p>
+    <p>Vous avez utilisé {{ usedPercent() }}% de vos congés</p>
 
-<button type="button" [disabled]="isEmpty()" (click)="addDay()">Prendre un jour de congé</button>
-<!-- Pour la condition, [disabled]="daysTaken() === 0" suffit -->
-<button type="button" [disabled]="daysTaken() === 0 ? true : false" (click)="removeDay()">
-  Annuler un jour de congé
-</button>
-<button type="button" (click)="rest()">Remise à zéro</button>
-<button type="button" [disabled]="isEmpty()" (click)="addWeek()">
-  Prendre une semaine de congés
-</button>
+    <div class="counter__actions">
+      <!-- matButton="filled" : bouton plein, l'action principale. -->
+      <button matButton="filled" type="button" [disabled]="isEmpty()" (click)="addDay()">
+        Prendre un jour de congé
+      </button>
 
-<p>Historique des actions :</p>
-<p>{{ history() }}</p>
+      <!-- Pour la condition, [disabled]="daysTaken() === 0" suffit -->
+      <button
+        matButton="outlined"
+        type="button"
+        [disabled]="daysTaken() === 0 ? true : false"
+        (click)="removeDay()"
+      >
+        Annuler un jour de congé
+      </button>
+
+      <!-- matButton sans valeur : bouton texte, l'action secondaire. -->
+      <button matButton type="button" (click)="rest()">Remise à zéro</button>
+      <button type="button" [disabled]="isEmpty()" (click)="addWeek()">
+        Prendre une semaine de congés
+      </button>
+    </div>
+
+    <p>Historique des actions :</p>
+    <p>{{ history() }}</p>
+  </mat-card-content>
+</mat-card>
