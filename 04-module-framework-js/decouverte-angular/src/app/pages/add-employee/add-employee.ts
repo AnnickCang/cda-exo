@@ -48,6 +48,7 @@ export class AddEmployee {
   // 1. Le modèle : un signal qui contient toutes les valeurs du formulaire.
   //    { ...EMPTY_DRAFT } : une copie, pour ne jamais modifier EMPTY_DRAFT.
   private readonly draft = signal<EmployeeDraft>({ ...EMPTY_DRAFT });
+  private readonly submitAttempted = signal(false);
 
   // 2. Le formulaire : un champ par propriété du modèle.
   protected readonly employeeForm = form(
@@ -73,6 +74,7 @@ export class AddEmployee {
       //    async : elle pourrait attendre une réponse d'API.
       submission: {
         action: async () => this.save(),
+        onInvalid: () => this.submitAttempted.set(true),
       },
     },
   );
@@ -80,6 +82,8 @@ export class AddEmployee {
   protected resetForm(): void {
     // reset() remet les valeurs ET efface l'état "touché" des champs.
     this.employeeForm().reset({ ...EMPTY_DRAFT });
+    // Remise à false pour effacer les messages d'erreurs précédents affichés en haut du formulaire
+    this.submitAttempted.set(false);
   }
 
   protected async save(): Promise<void> {
