@@ -49,3 +49,30 @@
   <h2 id="leave-title">Mes congés</h2>
   <app-leave-counter />
 </section>
+
+<section aria-labelledby="departments-title">
+  <h2 id="departments-title">Nos services</h2>
+
+  <!-- Une seule zone annoncee au lecteur d'ecran : l'etat du chargement. -->
+  <p aria-live="polite">
+    @if (departments.isLoading()) {
+      Chargement des services...
+    } @else if (departments.error()) {
+      Impossible de charger les services.
+    } @else if (departments.hasValue()) {
+      {{ departments.value().length }} services
+    }
+  </p>
+
+  @if (departments.hasValue()) {
+    <button matButton="outlined" type="button" (click)="departments.reload()">Réessayer</button>
+  }
+
+  @if (departments.hasValue()) {
+    <ul>
+      @for (dpt of departments.value(); track dpt.id) {
+        <li>{{ dpt.name }}, étage {{ dpt.floor }}</li>
+      }
+    </ul>
+  }
+</section>
