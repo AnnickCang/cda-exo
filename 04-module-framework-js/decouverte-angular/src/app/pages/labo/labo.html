@@ -11,3 +11,18 @@
     }
   </ol>
 </section>
+
+<section aria-labelledby="promise-title">
+  <h2 id="promise-title">2. Une Promise avec async / await</h2>
+  <button matButton="filled" type="button" [disabled]="loading()" (click)="loadTip()">
+    Conseil du jour
+  </button>
+  <!-- aria-busy : le lecteur d'ecran sait que la zone est en cours de mise a jour. -->
+  <p aria-live="polite" [attr.aria-busy]="loading()">
+    @if (loading()) {
+      Chargement ...
+    } @else {
+      {{ tip() }}
+    }
+  </p>
+</section>
