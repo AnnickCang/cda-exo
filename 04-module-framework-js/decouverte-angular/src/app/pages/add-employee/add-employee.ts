@@ -1,4 +1,5 @@
 import { Component, signal, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import {
   FormField,
   FormRoot,
@@ -47,11 +48,17 @@ export class AddEmployee {
   //protected readonly departments = ['Informatique', 'Ressources humaines', 'Commercial'];
   // remplacée par les lignes ci-dessous (on importe la liste)
   protected readonly departmentApi = inject(DepartmentApi);
+  /*
   protected readonly departments = signal<string[]>([]); // vide au départ, se remplit quand la réponse arrive
   constructor() {
     // subscribe : la requête part maintenant. Le callback reçoit la réponse.
     this.departmentApi.getNames().subscribe((names) => this.departments.set(names));
   }
+*/
+  // le signal departments et son constructeur sont maintenant remplacés par cette ligne
+  // ATTENTION : dans les DevTools, dans l'onglet Réseau, il y aura une requête par clic sur la page "Ajouter"
+  // donc autant de requêtes que de clics
+  protected readonly departments = toSignal(this.departmentApi.getNames(), { initialValue: [] });
 
   // 1. Le modèle : un signal qui contient toutes les valeurs du formulaire.
   //    { ...EMPTY_DRAFT } : une copie, pour ne jamais modifier EMPTY_DRAFT.
