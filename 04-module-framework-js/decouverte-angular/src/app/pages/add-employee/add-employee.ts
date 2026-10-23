@@ -53,16 +53,20 @@ export class AddEmployee {
   protected readonly employeeForm = form(
     this.draft,
     // Le schéma : les règles de validation de chaque champ.
+    // path (ou un autre nom) représente le formulaire .xxx ses champs
+    // Les fonctions appelées sont des règles de contrôles d'Angular (required, minLength...)
     (path) => {
       required(path.firstName, { message: 'Le prénom est obligatoire.' });
       required(path.lastName, { message: 'Le nom est obligatoire' });
       minLength(path.lastName, 2, { message: 'Le nom doit contenir au moins 2 lettres.' });
       required(path.email, { message: "L'e-mail est obligatoire." });
+      // ATTENTION : la fonction email ne vérifie pas l'extension de domaine (.fr par exemple).
+      // Elle vérifie juste 'texte123@fddsf123'
       email(path.email, {
         message: "L'e-mail n'est pas valide (exemple : prenom.nom@techcorp.fr).",
       });
       required(path.job, { message: 'Le poste est obligatoire.' });
-      maxLength();
+      maxLength(path.job, 40, { message: 'Le poste ne doit pas dépasser 40 caractères.' });
     },
     {
       // 3. L'action de soumission : appelée à l'envoi du formulaire.
