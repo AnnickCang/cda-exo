@@ -1,7 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { Component, DestroyRef, inject, signal } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
-import { Subscription, interval } from 'rxjs';
+import { Subscription, filter, interval, map, of, single, take } from 'rxjs';
 
 const TIPS = [
   "Lisez toujours le message d'erreur en entier.",
@@ -10,6 +11,7 @@ const TIPS = [
 ];
 
 // Une Promise qui se termine (resolve) après ms millisecondes.
+// ATTENTION : une fonction qui renvoie une Promise doit toujours être appelée avec await devant, sinon on la "bypass"
 function wait(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -23,22 +25,40 @@ async function fetchTip(): Promise<string> {
   }
   return TIPS[Math.floor(Math.random() * TIPS.length)];
 }
+
 @Component({
-  imports: [MatButton],
+  imports: [DatePipe, MatButton],
   selector: 'app-labo',
   styleUrl: './labo.css',
   templateUrl: './labo.html',
 })
 export class Labo {
+  // L'ordre d'exécution (avec un setTimeout)
   protected readonly logs = signal<string[]>([]);
 
+  // Une Promise et async/await
   protected readonly loading = signal(false);
   protected readonly tip = signal('');
 
+  // Un Observable et son abonnement
   protected readonly seconds = signal(0);
   protected readonly running = signal(false);
   private chronoSubscription?: Subscription;
   private readonly destroyRef = inject(DestroyRef);
+
+  // Un Observable transformé en signal (plus besoin de faire le subscribe et le unsubscribe)
+  protected readonly now = toSignal(interval(1000).pipe(map(() => new Date())), {
+    initialValue: new Date(), // attribution d'une valeur avant la première émission, sinon vaudrait undefiend pendant une seconde
+  });
+
+  protected readonly countdown = signal(0);
+  protected readonly countdownRunning = signal(false);
+  protected readonly countdownEndMessage = signal('');
+
+  protected debutDuree: number = 0;
+  protected finDuree: number = 0;
+  protected readonly duree = signal(0);
+  protected readonly perfRunning = signal(false);
 
   protected runTimeout(): void {
     this.logs.set([]);
@@ -88,4 +108,62 @@ export class Labo {
     this.chronoSubscription?.unsubscribe();
     this.running.set(false);
   }
+
+  protected runOperators(): void {
+    this.logs.set([]);
+    of(1, 2, 3, 4, 5, 6)
+      .pipe(
+        filter((n) => n % 2 === 0),
+        map((n) => n * 10), // le map s'applique sur les résultats du filter précédent
+      )
+      .subscribe({
+        next: (n) => this.log('Valeur reçue : ' + n),
+        complete: () => this.log('Terminé'),
+      });
+  }
+
+  protected startPauseIn(): void {
+    this.countdownEndMessage.set('');
+    this.countdownRunning.set(true);
+    this.chronoSubscription = interval(1000)
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        // take(10) : pour 10 valeurs, de 0 à 9
+        take(10),
+        // pour la map, n démarre à 0
+        map((n) => 9 - n),
+      )
+      .subscribe({
+        next: (n) => this.countdown.set(n),
+        complete: () => {
+          this.countdownEndMessage.set("C'est l'heure de la pause !");
+          this.countdownRunning.set(false);
+        },
+      });
+  }
+
+  // Mesure de performances
+  // ATTENTION : une fonction qui utilise await doit toujours être déclarée async
+  protected async perf2wait(): Promise<void> {
+    this.perfRunning.set(true);
+    this.debutDuree = performance.now();
+    // On attend la fin de chaque wait() => 2s
+    await wait(1000);
+    await wait(1000);
+    this.finDuree = performance.now();
+    this.duree.set(Math.round(this.finDuree - this.debutDuree) / 1000);
+    this.perfRunning.set(false);
+  }
+  protected async perfWaitPromise(): Promise<void> {
+    this.perfRunning.set(true);
+    this.debutDuree = performance.now();
+    // On lance la Promise et on poursuit, on récupèrera sa valeur quand ce sera fini => 1s (attente moins longue)
+    await Promise.all([wait(1000), wait(1000)]);
+    this.finDuree = performance.now();
+    this.duree.set(Math.round(this.finDuree - this.debutDuree) / 1000);
+    this.perfRunning.set(false);
+  }
+
+  // Utilisation d'un Observable
+  // Défi Avancé 2 de la phase 1 (à revoir)
 }
