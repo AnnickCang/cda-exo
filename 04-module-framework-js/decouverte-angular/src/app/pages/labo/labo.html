@@ -26,3 +26,16 @@
     }
   </p>
 </section>
+
+<section aria-label="chrono-title">
+  <h2 id="chrono-title">3. Un Observable : le chronomètre</h2>
+  <p>Secondes écoulées : {{ seconds() }}</p>
+  <div class="actions">
+    <button matButton="filled" type="button" [disabled]="running()" (click)="startChrono()">
+      Démarrer
+    </button>
+    <button matButton="outlined" type="button" [disabled]="!running()" (click)="stopChrono()">
+      Arrêter
+    </button>
+  </div>
+</section>

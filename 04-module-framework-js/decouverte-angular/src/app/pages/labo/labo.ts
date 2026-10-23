@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
+import { Subscription, interval } from 'rxjs';
 
 const TIPS = [
   "Lisez toujours le message d'erreur en entier.",
@@ -29,8 +31,14 @@ async function fetchTip(): Promise<string> {
 })
 export class Labo {
   protected readonly logs = signal<string[]>([]);
+
   protected readonly loading = signal(false);
   protected readonly tip = signal('');
+
+  protected readonly seconds = signal(0);
+  protected readonly running = signal(false);
+  private chronoSubscription?: Subscription;
+  private readonly destroyRef = inject(DestroyRef);
 
   protected runTimeout(): void {
     this.logs.set([]);
@@ -59,5 +67,25 @@ export class Labo {
       // exécuté dans tous les cas, succès ou erreur
       this.loading.set(false);
     }
+  }
+
+  protected startChrono(): void {
+    this.running.set(true);
+    // subscribe : on s'abonne, le flux démarre. Il renvoie un "abonnement"
+    this.chronoSubscription = interval(1000)
+      // .pipe : permet d'ajouter un filtre avant l'abonnement (pour y intégrer d'autres actions)
+      // ici takeUntilDestroyed(this.destroyRef) : désbonne quand on quitte la page (via un lien par exemple)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((value) => {
+        console.log('tic', value);
+        this.seconds.set(value + 1);
+      });
+  }
+
+  protected stopChrono(): void {
+    // unsubscribe : on se désabonne, le flux s'arrête
+    // Le ? signifie : si chronoSubscription n'est pas à undefined, alors exécute l'action, sinon ne fait rien
+    this.chronoSubscription?.unsubscribe();
+    this.running.set(false);
   }
 }
