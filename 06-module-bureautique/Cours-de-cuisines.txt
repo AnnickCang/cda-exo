@@ -1,0 +1,27 @@
+Application permettant de gérer des cours de cuisine
+
+- réunit des personnes souhaitant partager leur cuisine en donnant des cours et des personnes souhaitant découvrir et apprendre d'autres cuisines
+
+Questions :
+- Quels types de cuisine aimez-vous ?
+	- De quels pays ?
+	- Recettes rapides ? Festives ? Créatives ? Fusion ?
+	- Combien de temps accordez-vous pour la cuisine ?
+- Plutôt cours 
+	- en présentiel dans un salle ?
+	- en live ?
+	- avec des vidéos tutoriels ?
+- Quels sont vos disponibilités ? (pour donner des cours / apprendre)
+	- plutôt le soir ? A partir de quelle heure ?
+	- plutôt le week end ?
+	- plutôt vacances scolaires ?
+- Tarifs
+	- Seuil maximum pour un cours ?
+	- Mode abonnement ?
+- Ustensiles ?
+	- Déjà fournis ?
+	- A apporter ?
+	- Kit d'ustensile à acheter ? Abo en plus pour l'utiliser ?
+- Ingrédients ?
+- Salle ?
+

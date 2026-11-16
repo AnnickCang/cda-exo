@@ -1,0 +1,6 @@
+Contexte : [projet] : module [nom]
+Objectif : les règles de gestion de [fonction]
+Contraintes : [les règles], sans en ajouter
+Format : Règles numérotées, tableau de cas, hypothèses
+Critères : Un cas accepté et un cas refusé par règle, sauf [les cas limites]
+Exemple : [un cas déjà résolu]

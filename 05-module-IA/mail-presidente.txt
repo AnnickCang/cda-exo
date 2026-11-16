@@ -1,0 +1,743 @@
+Voici le mail de la présidente :
+"Bonjour,
+Comme convenu, voici ce qu'on aimerait.
+Aujourd'hui on note tout dans des tableurs et on s'y perd.
+On voudrait une appli pour suivre les objets qu'on reçoit (on en reçoit à peu près 200 par semaine), savoir où ils sont et ce qui est vendu.
+Les bénévoles mettent un prix selon l'état, mais chacun fait un peu à sa façon.
+Il faudrait que les bénévoles puissent s'inscrire aux permanences parce qu'on a souvent des trous le samedi.
+Ce serait bien d'avoir aussi des statistiques pour la mairie, qui nous subventionne.
+Et certains donateurs veulent un reçu.
+Pas besoin de vente en ligne pour l'instant.
+Merci, la présidente"
+
+Rédige 8 à 12 user stories (En tant que..., jeux..., afin de...) tirées de ce mail, sans rien ajouter. Sous chacune, cite la phrase du mail d'où elle vient.
+
+Réponses de ChatGPT :
+1. Enregistrement des objets reçus
+User story : En tant que bénévole, je veux enregistrer les objets reçus afin de suivre les entrées de l'association.
+
+Phrase source : « On voudrait une appli pour suivre les objets qu'on reçoit (on en reçoit à peu près 200 par semaine). »
+
+Questions :
+- Quelles informations enregistrer ? (date de réception, nom du donateur (plus d'informations sur le donateur ?), état, prix de vente, ...)
+- Enregistrer tous les objets reçus, y compris ceux qui ne seront pas vendables ? Est-ce que tout objet est accepté, ou bien y a-t-il des critères d'acceptation (type d'objet non vendable, état trop délabré,...) ?
+
+2. Localisation des objets
+User story : En tant que bénévole, je veux connaître l'emplacement des objets afin de savoir où ils se trouvent.
+
+Phrase source : « savoir où ils sont »
+
+Questions :
+- Comment sont rangés les objets (numéro de rangée, numéro d'étagère,...)
+
+3. Suivi des ventes
+User story : En tant que bénévole, je veux suivre les objets vendus afin de savoir ce qui a été vendu.
+
+Phrase source : « et ce qui est vendu. »
+
+Questions :
+- Quelles informations de vente ? (nom de l'objet, date de vente, plus d'informations ?)
+
+4. Définition du prix des objets
+User story : En tant que bénévole, je veux pouvoir attribuer un prix aux objets en fonction de leur état afin de déterminer leur prix de vente.
+
+Phrase source : « Les bénévoles mettent un prix selon l'état »
+
+Questions :
+- Comment définir l'état d'un objet ? Combien d'états ?
+- Comment définir le prix de base ?
+
+5. Harmonisation de la tarification
+User story : En tant que bénévole, je veux disposer d'une manière commune de fixer les prix afin que les bénévoles ne pratiquent pas chacun leur propre méthode.
+
+Phrase source : « mais chacun fait un peu à sa façon. »
+
+Questions :
+- Comment fixer prix ? Selon une grille (par type d'objet et par état de l'objet), définie à l'avance ou à remplir ?
+
+6. Inscription aux permanences
+User story : En tant que bénévole, je veux pouvoir m'inscrire aux permanences afin de participer à leur organisation.
+
+Phrase source : « Il faudrait que les bénévoles puissent s'inscrire aux permanences »
+
+Questions :
+- Règles des permanences (récupérer les 4 règles de la présidente)
+
+X 7. Suivi des permanences du samedi
+User story : En tant que responsable de l'association, je veux identifier les permanences du samedi qui manquent de bénévoles afin de repérer les créneaux non couverts.
+
+Phrase source : « parce qu'on a souvent des trous le samedi. »
+
+8. Production de statistiques
+User story : En tant que responsable de l'association, je veux disposer de statistiques afin de les transmettre à la mairie qui nous subventionne.
+
+Phrase source : « Ce serait bien d'avoir aussi des statistiques pour la mairie, qui nous subventionne. »
+
+Questions :
+- Quelles informations à recueillir et à intégrer dans les statistiques ? (nombre de ventes, types d'objets le plus vendu ou le moins vendu, nombre de personnes par jour de permanence, ...)
+
+9. Émission de reçus aux donateurs
+User story : En tant que donateur, je veux pouvoir obtenir un reçu pour mon don afin de disposer d'un justificatif.
+
+Phrase source : « Et certains donateurs veulent un reçu. »
+
+Questions :
+- Sous quel format ? Uniquement en dématérialisé ?
+- Quelles informations à mettre dans un reçu ?
+
+X 10. Absence de vente en ligne
+User story : En tant que responsable de l'association, je veux que l'application ne propose pas de vente en ligne afin de rester sur le fonctionnement actuel.
+
+Phrase source : « Pas besoin de vente en ligne pour l'instant. »
+
+-----
+CONTEXTE
+Application web de la ressourcerie Seconde Vie.
+Mail de la présidente : "Bonjour,
+Comme convenu, voici ce qu'on aimerait.
+Aujourd'hui on note tout dans des tableurs et on s'y perd.
+On voudrait une appli pour suivre les objets qu'on reçoit (on en reçoit à peu près 200 par semaine), savoir où ils sont et ce qui est vendu.
+Les bénévoles mettent un prix selon l'état, mais chacun fait un peu à sa façon.
+Il faudrait que les bénévoles puissent s'inscrire aux permanences parce qu'on a souvent des trous le samedi.
+Ce serait bien d'avoir aussi des statistiques pour la mairie, qui nous subventionne.
+Et certains donateurs veulent un reçu.
+Pas besoin de vente en ligne pour l'instant.
+Merci, la présidente"
+Nos user stories :
+1. Enregistrement des objets reçus : En tant que bénévole, je veux enregistrer les objets reçus afin de suivre les entrées de l'association.
+2. Localisation des objets : En tant que bénévole, je veux connaître l'emplacement des objets afin de savoir où ils se trouvent.
+3. Suivi des ventes : En tant que bénévole, je veux suivre les objets vendus afin de savoir ce qui a été vendu.
+4. Définition du prix des objets : En tant que bénévole, je veux pouvoir attribuer un prix aux objets en fonction de leur état afin de déterminer leur prix de vente.
+5. Harmonisation de la tarification : En tant que bénévole, je veux disposer d'une manière commune de fixer les prix afin que les bénévoles ne pratiquent pas chacun leur propre méthode.
+6. Inscription aux permanences : En tant que bénévole, je veux pouvoir m'inscrire aux permanences afin de participer à leur organisation.
+7. Production de statistiques : En tant que responsable de l'association, je veux disposer de statistiques afin de les transmettre à la mairie qui nous subventionne.
+8. Émission de reçus aux donateurs : En tant que donateur, je veux pouvoir obtenir un reçu pour mon don afin de disposer d'un justificatif.
+
+OBJECTIF
+Proposer le modèle de données des modules Dons et Objets, puis la liste des écrans ui réalisent ces user stories.
+
+CONTRAINTES
+- Rien d'autre que ce que disent le mail et les stories.
+- Le prix dépend du prix de base de la catégorie et de l'état.
+- Ni code ni schéma : des phrases simples.
+
+FORMAT DE SORTIE
+1. Le modèle : une phrase par fiche, ses informations entre parenthèses, puis une phrase par lien.
+Exemple : "Un don (date) contient des objets."
+2. Les écrans : nom, à quoi il sert, qui l'utilise, champs, boutons.
+3. La liste de tes hypothèses.
+
+CRITERES
+- Chaque fiche, lien et écran cite sa story ou sa phrase du mail.
+- Chaque champ d'un écran est une information du modèle.
+
+-----
+Réponse de ChatGPT :
+
+1. Modèle de données
+Le modèle est organisé autour de deux modules : Dons et Objets.
+
+Module Dons
+- Un don (date du don, identité du donateur, coordonnées du donateur, demande de reçu) enregistre un apport fait à l'association. (Mail : « On voudrait une appli pour suivre les objets qu'on reçoit (on en reçoit à peu près 200 par semaine). » ; Story 1).
+- Un donateur (nom, prénom, coordonnées) est une personne qui effectue un don. (Story 8).
+- Un reçu de don (date d'émission, don concerné) est un justificatif remis au donateur. (Mail : « certains donateurs veulent un reçu »; Story 8).
+
+Liens :
+- Un donateur peut effectuer plusieurs dons. (Story 8).
+- Un don contient un ou plusieurs objets. (Story 1 et mail : « suivre les objets qu'on reçoit »).
+- Un don peut donner lieu à un reçu. (Story 8).
+
+Module Objets
+- Un objet (désignation, catégorie, état, prix de base, prix de vente calculé, emplacement, statut, date de réception, date de vente) représente un objet reçu par l'association. (Stories 1, 2, 3, 4 et 5).
+- Une catégorie (nom, prix de base) permet de regrouper les objets et de définir leur prix de référence. (Mail : « Le prix dépend du prix de base de la catégorie et de l'état » ; Story 5).
+- Un état (nom, coefficient de prix) permet de déterminer le prix d'un objet en fonction de son état. (Stories 4 et 5).
+- Un emplacement (étagère, numéro) indique où se trouve un objet dans la ressourcerie. (Story 2).
+- Une vente (date de vente, objet vendu) enregistre la vente d'un objet. (Story 3).
+
+Liens :
+- Une catégorie concerne plusieurs objets. (Story 1 et Story 5).
+- Un état peut concerner plusieurs objets. (Stories 4 et 5).
+- Un emplacement peut accueillir plusieurs objets. (Story 2). ? Ou pour commencer simplement : un emplacement peut accueillir un seul objet
+- Un objet appartient à un seul don. (Story 1).
+- Un objet peut faire l'objet d'une vente. (Story 3).
+- Le prix de vente d'un objet est calculé à partir du prix de base de sa catégorie et du coefficient correspondant à son état. (Mail : « Le prix dépend du prix de base de la catégorie et de l'état »).
+
+2. Liste des écrans
+Écran 0 — Tableau de bord / Menu principal
+- À quoi il sert : permettre aux utilisateurs d'accéder aux différents écrans des modules Dons et Objets.
+- Utilisateur : bénévole et responsable de l'association.
+- Champs :
+	- Aucun champ de saisie. Les informations affichées proviennent des fiches Don et Objet.
+- Boutons :
+	- Enregistrer un don.
+	- Consulter un don.
+	- Consulter les objets.
+	- Gérer les catégories et les états.
+	- Suivre les ventes.
+
+(Références : Stories 1, 2, 3, 4, 5 et 8 ; mail : « On voudrait une appli pour suivre les objets qu'on reçoit […] savoir où ils sont et ce qui est vendu » et « certains donateurs veulent un reçu »).
+
+Hypothèse : cet écran constitue le point d'entrée de l'application. Les boutons donnent accès aux écrans correspondants, sans introduire de nouvelles informations dans le modèle de données.
+
+Module Dons
+Écran 1 — Enregistrer un don
+- À quoi il sert : enregistrer un don et les objets reçus.
+- Utilisateur : bénévole.
+- Champs :
+	- Date du don.
+	- Nom du donateur
+	- Prénom du donateur
+	- (Coordonnées du donateur)
+	- (Reçu). -> apparaît uniquement après l'enregistrement du don (sur l'écran des infos sur le don)
+- Boutons :
+	- Nouveau donateur
+	- Enregistrer le don.
+	- Ajouter un objet.
+	- Supprimer un objet ajouté.
+	- Annuler.
+
+(Références : Story 1 et Story 8 ; mail : « suivre les objets qu'on reçoit » et « certains donateurs veulent un reçu »).
+
+Écran 2 — Consulter un don
+- À quoi il sert : consulter les informations d'un don et les objets associés.
+- Utilisateur : bénévole.
+- Champs :
+	- Date du don.
+	- Nom du donateur
+	- Prénom du donateur
+	- Reçu.
+	- Objets associés.
+- Boutons :
+	- Émettre un reçu.
+
+(Références : Story 1 et Story 8).
+
+Écran 3 — Émettre un reçu
+- À quoi il sert : produire un justificatif pour le donateur.
+- Utilisateur : bénévole.
+- Champs :
+	- Date d'émission.
+	- Don concerné.
+- Boutons :
+	- Émettre le reçu.
+	- Envoyer par mail.
+	- Annuler.
+
+(Référence : Story 8).
+
+Module Objets
+Écran 4 — Enregistrer un objet
+- À quoi il sert : enregistrer un objet reçu par l'association.
+- Utilisateur : bénévole.
+- Champs :
+	- Désignation. (Libellé ?)
+	- Catégorie.
+	- Type
+	- État.
+	- (Date de réception.) -> L'ajout d'objet se fait depuis l'ajout d'un don, donc la date est celle du don
+	- Don associé.
+	- Statut (par défaut : en attente, afin de lui attribuer un état et un emplacement, puis : en stock, vendu, recyclé)
+	- Prix avec une barre pour ajuster le prix calculé initialement
+- Boutons :
+	- Enregistrer l'objet.
+	- Annuler.
+
+Table d'états dont les états sont définis et fixes, avec un coefficient associé pour le calcul du prix
+- Champs :
+	- Etat (neuf, comme neuf, bon, mauvais, à réparer)
+	- Coefficient (à appliquer sur le prix de base du type d'objet)
+
+(Référence : Story 1).
+(Terminer de vérifier les écrans à partir d'ici)
+Écran 5 — Consulter les objets
+- À quoi il sert : retrouver les objets, connaître leur emplacement ou leur en attribuer un, modifier leur état (donnera un prix).
+- Utilisateur : bénévole.
+- Champs :
+	- Désignation.
+	- Catégorie.
+	- État.
+	- Emplacement.
+	- Statut.
+	- Don associé
+	- Prix de vente
+- Boutons :
+	- Modifier l'emplacement.
+	- Consulter l'objet.
+
+(Référence : Story 2).
+
+Écran 6 — Définir le prix d'un objet
+- À quoi il sert : calculer le prix de vente d'un objet selon sa catégorie et son état.
+- Utilisateur : bénévole.
+- Champs :
+	- Désignation.
+	- Catégorie.
+	- Prix de base.
+	- État.
+	- Coefficient de prix.
+	- Prix de vente calculé.
+- Boutons :
+	- Calculer le prix.
+	- Enregistrer le prix.
+
+(Références : Stories 4 et 5 ; mail : « Les bénévoles mettent un prix selon l'état, mais chacun fait un peu à sa façon »).
+
+Écran 7 — Gérer les catégories et les états
+- À quoi il sert : définir les prix de base par catégorie et les coefficients associés aux différents états afin d'harmoniser la tarification.
+- Utilisateur : responsable de l'association.
+- Champs :
+	- Nom de la catégorie.
+	- Types d'objets (liste de tous les types d'objets associés à cette catégorie; au moins un type)
+- Boutons :
+	- Ajouter une catégorie.
+	- Modifier une catégorie.
+	- Ajouter un type.
+	(- Modifier un type.)
+	- Supprimer un type
+	- Enregistrer.
+
+(Référence : Story 5 ; mail : « chacun fait un peu à sa façon »).
+
+Écran 8 — Suivre les ventes
+- À quoi il sert : enregistrer et consulter les objets vendus.
+- Utilisateur : bénévole.
+- Champs :
+	- Objet vendu.
+	- Date de vente.
+	- Statut.
+- Boutons :
+	- Enregistrer la vente.
+	- Consulter les ventes.
+
+(Référence : Story 3).
+
+3. Liste des hypothèses
+Les éléments suivants ne sont pas explicitement précisés dans le mail ou les user stories. Ils sont proposés pour rendre le modèle cohérent.
+1. Un don contient un ou plusieurs objets. Hypothèse : un don peut regrouper plusieurs objets remis lors d'une même occasion.
+2. Un objet appartient à un seul don. Hypothèse : chaque objet est rattaché au don dont il provient.
+3. Un donateur possède des coordonnées. Hypothèse : elles sont nécessaires pour pouvoir lui transmettre son reçu.
+4. Un reçu est associé à un don. Hypothèse : un reçu correspond à un don et non à chaque objet séparément.
+5. Le prix de vente est calculé par multiplication du prix de base par le coefficient de l'état. Cette formule est une proposition, car seule la dépendance entre ces deux informations est imposée.
+6. Les états disposent de coefficients de prix. Hypothèse : chaque état possède un coefficient permettant de calculer le prix.
+7. Un objet possède un statut. Hypothèse : cela permet notamment de distinguer les objets disponibles des objets vendus.
+8. Un objet ne peut faire l'objet que d'une seule vente. Hypothèse : un objet vendu ne peut pas être vendu une seconde fois.
+9. Les emplacements sont définis à l'avance. Hypothèse : les bénévoles choisissent un emplacement existant plutôt que de saisir librement une localisation.
+10. Le responsable de l'association gère les catégories et les états. Hypothèse : cette gestion centralisée permet d'harmoniser la tarification.
+
+Périmètre volontairement exclu : les permanences et leurs inscriptions, car elles ne relèvent ni du module Dons ni du module Objets. La vente en ligne est également exclue, conformément au mail : « Pas besoin de vente en ligne pour l'instant ».
+
+Écran 9 — Ajouter un donateur
+- À quoi il sert : enregistrer un nouveau donateur dans l'application afin de pouvoir l'associer à ses dons.
+- Utilisateur : bénévole.
+- Champs :
+	- Nom
+	- Prénom
+	- Adresse1
+	- Adresse2
+	- Code postal
+	- Ville
+	- Téléphone
+	- E-mail
+- Boutons :
+	- Enregistrer le donateur.
+	- Annuler.
+
+(Références : Story 8 ; mail : « certains donateurs veulent un reçu »).
+
+Écran 10 — Gérer les donateurs
+- À quoi il sert : consulter la liste des donateurs et accéder à leurs informations pour les gérer.
+- Utilisateur : bénévole.
+- Champs :
+	- Nom
+	- Prénom
+	- Adresse1
+	- Adresse2
+	- Code postal
+	- Ville
+	- Téléphone
+	- E-mail
+- Boutons :
+	- Ajouter un donateur.
+	- Consulter un donateur.
+	- Modifier un donateur.
+	- Rechercher un donateur.
+
+(Référence : Story 8 ; mail : « certains donateurs veulent un reçu »).
+
+Hypothèses :
+- Un donateur peut effectuer plusieurs dons.
+- La gestion des donateurs comprend leur consultation et leur modification.
+- La suppression d'un donateur n'est pas prévue, afin de conserver le lien avec ses dons et les reçus associés.
+
+Écran 11 — Ajouter et gérer les types d'objets
+- À quoi il sert : créer, consulter et modifier les types d'objets afin de mieux classer les objets reçus. Chaque type d'objet est obligatoirement rattaché à une catégorie.
+- Utilisateur : responsable de l'association.
+- Champs :
+	- Nom du type d'objet.
+	- Catégorie associée.
+	- Prix de base
+- Boutons :
+	- Ajouter un type d'objet.
+	- Enregistrer le type d'objet.
+	- Consulter les types d'objets.
+	- Modifier un type d'objet.
+	- Rechercher un type d'objet.
+
+(Références : Story 1 pour l'enregistrement des objets ; Story 5 pour l'harmonisation de la tarification ; mail : « Les bénévoles mettent un prix selon l'état, mais chacun fait un peu à sa façon »).
+
+Modifications à apporter au modèle de données
+Pour respecter les nouvelles contraintes :
+- Un type d'objet (nom, prix de base, catégorie associée) permet de préciser la nature d'un objet. (Story 1 et contrainte ajoutée).
+- Une catégorie (nom) regroupe plusieurs types d'objets. (Story 5 et contrainte ajoutée).
+- Un objet (désignation, type d'objet, catégorie, état, prix de base, prix de vente calculé, emplacement, statut, date de réception, date de vente) possède obligatoirement un type d'objet et une catégorie. (Stories 1, 4 et 5 ; contrainte ajoutée).
+
+Liens :
+- Une catégorie peut contenir plusieurs types d'objets. (Contrainte ajoutée).
+- Un type d'objet appartient à une seule catégorie. (Contrainte ajoutée).
+- Un objet possède obligatoirement un type d'objet. (Contrainte ajoutée).
+- Un objet possède obligatoirement une catégorie. (Contrainte ajoutée).
+
+Hypothèses
+- Le prix de base reste défini au niveau de la catégorie, et non du type d'objet, conformément à la règle de tarification initiale.
+- Lors de l'enregistrement d'un objet, le bénévole choisit d'abord une catégorie, puis un type d'objet appartenant à cette catégorie.
+- Un type d'objet déjà utilisé par des objets ne peut pas être supprimé afin de préserver la cohérence des données.
+
+-----
+Faire classer les users stories par l'IA :
+
+CONTEXTE
+Voici les user stories de l'application :
+1. Enregistrement des objets reçus : En tant que bénévole, je veux enregistrer les objets reçus afin de suivre les entrées de l'association.
+2. Localisation des objets : En tant que bénévole, je veux connaître l'emplacement des objets afin de savoir où ils se trouvent.
+3. Suivi des ventes : En tant que bénévole, je veux suivre les objets vendus afin de savoir ce qui a été vendu.
+4. Définition du prix des objets : En tant que bénévole, je veux pouvoir attribuer un prix aux objets en fonction de leur état afin de déterminer leur prix de vente.
+5. Harmonisation de la tarification : En tant que bénévole, je veux disposer d'une manière commune de fixer les prix afin que les bénévoles ne pratiquent pas chacun leur propre méthode.
+6. Inscription aux permanences : En tant que bénévole, je veux pouvoir m'inscrire aux permanences afin de participer à leur organisation.
+7. Production de statistiques : En tant que responsable de l'association, je veux disposer de statistiques afin de les transmettre à la mairie qui nous subventionne.
+8. Émission de reçus aux donateurs : En tant que donateur, je veux pouvoir obtenir un reçu pour mon don afin de disposer d'un justificatif.
+
+MAIL DE LA PRESIDENTE
+"Bonjour,
+Comme convenu, voici ce qu'on aimerait.
+Aujourd'hui on note tout dans des tableurs et on s'y perd.
+On voudrait une appli pour suivre les objets qu'on reçoit (on en reçoit à peu près 200 par semaine), savoir où ils sont et ce qui est vendu.
+Les bénévoles mettent un prix selon l'état, mais chacun fait un peu à sa façon.
+Il faudrait que les bénévoles puissent s'inscrire aux permanences parce qu'on a souvent des trous le samedi.
+Ce serait bien d'avoir aussi des statistiques pour la mairie, qui nous subventionne.
+Et certains donateurs veulent un reçu.
+Pas besoin de vente en ligne pour l'instant.
+Merci, la présidente"
+
+OBJECTIF
+Classe ces user stories dans les catégories suivantes : indispensable, important, souhaitable, pas maintenant
+
+FORMAT DE SORTIE
+Tableau contenant les user stories classées
+
+---
+Résultats de ChatGPT:
+
+1. Enregistrement des objets reçus : Indispensable
+C'est le besoin principal : remplacer les tableurs et suivre les quelque 200 objets reçus chaque semaine.
+
+2. Localisation des objets : Indispensable
+La présidente souhaite savoir où se trouvent les objets.
+
+3. Suivi des ventes : Indispensable
+La présidente souhaite savoir ce qui est vendu.
+
+4. Définition du prix des objets : Indispensable
+Les bénévoles doivent pouvoir fixer un prix selon l'état des objets.
+
+5. Harmonisation de la tarification : Important
+Évite que chaque bénévole applique sa propre méthode et garantit une tarification cohérente.
+
+6. Inscription aux permanences : Important
+Répond à un problème d'organisation concret, notamment les permanences du samedi souvent incomplètes.
+
+7. Production de statistiques : Important
+Permet de fournir des données à la mairie, qui subventionne l'association.
+
+8. Émission de reçus aux donateurs : Souhaitable
+Répond à une demande de certains donateurs, mais ne concerne pas nécessairement tous les dons.
+
+Aucune user story : Pas maintenant
+
+Toutes les user stories correspondent à des besoins exprimés dans le mail et méritent donc d'être prises en compte.
+
+Remarque : la vente en ligne est explicitement exclue du périmètre actuel par la présidente (« Pas besoin de vente en ligne pour l'instant »). Elle est donc classée dans Pas maintenant, même si elle ne figure pas parmi les huit user stories.
+
+---
+Adaptation de ces résultats
+
+1. Enregistrement des objets reçus : Indispensable
+C'est le besoin principal : remplacer les tableurs et suivre les quelque 200 objets reçus chaque semaine.
+
+2. Localisation des objets : Indispensable
+La présidente souhaite savoir où se trouvent les objets.
+
+3. Suivi des ventes : Important
+La présidente souhaite savoir ce qui est vendu.
+
+4. Définition du prix des objets : Important
+Les bénévoles doivent pouvoir fixer un prix selon l'état des objets.
+
+5. Harmonisation de la tarification : Indispensable
+Évite que chaque bénévole applique sa propre méthode et garantit une tarification cohérente.
+
+6. Inscription aux permanences : Important
+Répond à un problème d'organisation concret, notamment les permanences du samedi souvent incomplètes.
+
+7. Production de statistiques : Souhaitable
+Permet de fournir des données à la mairie, qui subventionne l'association.
+
+8. Émission de reçus aux donateurs : Important
+Répond à une demande de certains donateurs, mais ne concerne pas nécessairement tous les dons.
+
+9. Vente en ligne : Pas maintenant
+
+------
+
+CONTEXTE
+Voici les user stories et leur priorité :
+1. Enregistrement des objets reçus : Indispensable
+2. Localisation des objets : Indispensable
+3. Suivi des ventes : Important
+4. Définition du prix des objets : Important
+5. Harmonisation de la tarification : Indispensable
+6. Inscription aux permanences : Important
+7. Production de statistiques : Souhaitable
+8. Émission de reçus aux donateurs : Important
+9. Vente en ligne : Pas maintenant
+
+CONTRAINTES
+Equipe de 3 développeurs
+
+OBJECTIF
+Je veux trois sprints de 2 semaines chacun permettant de réaliser toutes ces user stories en tenant compte de leur priorisation
+
+FORMAT DE SORTIE
+Liste des sprints avec leur contenu
+
+-----
+Réponse de l'IA
+
+Sprint 1 — Semaines 1 et 2
+Priorité : indispensable
+Objectif : Mettre en place la gestion des objets reçus et leur localisation.
+
+US 1 — Enregistrement des objets reçus (Indispensable)
+- Enregistrer les objets reçus.
+- Consulter les objets enregistrés.
+
+US 2 — Localisation des objets (Indispensable)
+- Enregistrer l'emplacement des objets.
+- Consulter leur emplacement.
+
+US 5 — Harmonisation de la tarification (Indispensable)
+- Définir les catégories et les règles communes de tarification.
+- Mettre en place les référentiels nécessaires.
+
+Livrable : une première version permettant d'enregistrer les objets, de les localiser et de préparer une tarification commune.
+
+Sprint 2 — Semaines 3 et 4
+Priorité : importante
+Objectif : Compléter la gestion commerciale et l'organisation des bénévoles.
+
+US 4 — Définition du prix des objets (Important)
+- Attribuer un prix selon la catégorie et l'état de l'objet.
+
+US 3 — Suivi des ventes (Important)
+- Enregistrer les objets vendus.
+- Consulter l'historique des ventes.
+
+US 6 — Inscription aux permanences (Important)
+- Consulter les permanences.
+- Permettre aux bénévoles de s'inscrire.
+
+Livrable : une application permettant de gérer les prix, de suivre les ventes et d'organiser les permanences.
+
+Sprint 3 — Semaines 5 et 6
+Finalisation
+Objectif : Ajouter les fonctionnalités complémentaires et finaliser l'application.
+
+US 8 — Émission de reçus aux donateurs (Important)
+- Enregistrer les informations nécessaires.
+- Générer les reçus des dons.
+
+US 7 — Production de statistiques (Souhaitable)
+- Produire des statistiques sur les objets reçus et vendus.
+- Préparer les données à transmettre à la mairie.
+
+Finalisation
+- Corriger les anomalies.
+- Tester les fonctionnalités.
+- Vérifier la cohérence des données.
+- Préparer la mise en production.
+
+-----
+CONTEXTE
+Les sprints précédents
+
+OBJECTIF
+Liste les risques du projet
+
+FORMAT DE SORTIE
+Sous forme de liste, du plus risqué au moins risqué
+
+-----
+Réponse de l'IA
+
+Liste des risques
+1. Dépassement des délais : trois développeurs disposent de seulement six semaines pour réaliser l'ensemble des fonctionnalités. La charge de travail peut être sous-estimée.
+
+2. Mauvaise gestion des données des objets : les objets reçus (environ 200 par semaine) doivent être correctement enregistrés, catégorisés et localisés. Des erreurs peuvent entraîner des pertes d'informations.
+
+3. Difficulté à harmoniser la tarification : les bénévoles ont actuellement chacun leur méthode pour fixer les prix. Il peut être difficile de définir des règles communes acceptées par tous.
+
+4. Problèmes d'intégration entre les fonctionnalités : la gestion des objets, des catégories, des prix et des ventes dépend de données communes. Une mauvaise conception peut provoquer des incohérences.
+
+5. Retard sur les fonctionnalités importantes : le suivi des ventes, la définition des prix, les permanences et les reçus doivent être réalisés dans des délais courts.
+
+6. Disponibilité limitée des bénévoles pour les tests : les bénévoles ont leurs activités associatives et pourraient ne pas être disponibles pour tester régulièrement l'application.
+
+7. Statistiques insuffisantes ou incorrectes : les données produites pour la mairie pourraient être incomplètes ou ne pas répondre à ses attentes.
+
+8. Difficultés d'utilisation de l'application : certains bénévoles peuvent avoir des difficultés à prendre en main le nouvel outil, notamment s'ils sont habitués aux tableurs.
+
+9. Perte ou incohérence des données lors du passage des tableurs à l'application : les anciennes informations pourraient être mal reprises ou nécessiter un nettoyage.
+
+10. Mauvaise gestion des reçus aux donateurs : les informations nécessaires à l'émission des reçus pourraient être incomplètes ou incorrectes.
+
+11. Manque de temps pour les tests et les corrections : le dernier sprint doit intégrer les statistiques, les reçus, les tests et la préparation à la mise en production.
+
+12. Évolution du périmètre du projet : de nouvelles demandes pourraient apparaître pendant le développement et perturber la planification.
+
+Risque majeur à surveiller : le dépassement des délais. Avec seulement 3 développeurs et 6 semaines, il est important de respecter les priorités et de ne pas intégrer la vente en ligne, explicitement prévue pour une version ultérieure.
+
+-----
+Liste des risques à garder :
+1. Dépassement des délais : trois développeurs disposent de seulement six semaines pour réaliser l'ensemble des fonctionnalités. La charge de travail peut être sous-estimée.
+5. Retard sur les fonctionnalités importantes : le suivi des ventes, la définition des prix, les permanences et les reçus doivent être réalisés dans des délais courts.
+
+4. Problèmes d'intégration entre les fonctionnalités : la gestion des objets, des catégories, des prix et des ventes dépend de données communes. Une mauvaise conception peut provoquer des incohérences.
+
+8. Difficultés d'utilisation de l'application : certains bénévoles peuvent avoir des difficultés à prendre en main le nouvel outil, notamment s'ils sont habitués aux tableurs.
+
+? 9. Perte ou incohérence des données lors du passage des tableurs à l'application : les anciennes informations pourraient être mal reprises ou nécessiter un nettoyage.
+La reprise des données existantes fait-elle partie de la demande ?
+
+11. Manque de temps pour les tests et les corrections : le dernier sprint doit intégrer les statistiques, les reçus, les tests et la préparation à la mise en production.
+
+-----
+CONTEXTE
+Application web de la ressourcerie Seconde Vie.
+Mail de la présidente : "Bonjour,
+Comme convenu, voici ce qu'on aimerait.
+Aujourd'hui on note tout dans des tableurs et on s'y perd.
+On voudrait une appli pour suivre les objets qu'on reçoit (on en reçoit à peu près 200 par semaine), savoir où ils sont et ce qui est vendu.
+Les bénévoles mettent un prix selon l'état, mais chacun fait un peu à sa façon.
+Il faudrait que les bénévoles puissent s'inscrire aux permanences parce qu'on a souvent des trous le samedi.
+Ce serait bien d'avoir aussi des statistiques pour la mairie, qui nous subventionne.
+Et certains donateurs veulent un reçu.
+Pas besoin de vente en ligne pour l'instant.
+Merci, la présidente"
+Nos user stories :
+1. Enregistrement des objets reçus : En tant que bénévole, je veux enregistrer les objets reçus afin de suivre les entrées de l'association.
+2. Localisation des objets : En tant que bénévole, je veux connaître l'emplacement des objets afin de savoir où ils se trouvent.
+3. Suivi des ventes : En tant que bénévole, je veux suivre les objets vendus afin de savoir ce qui a été vendu.
+4. Définition du prix des objets : En tant que bénévole, je veux pouvoir attribuer un prix aux objets en fonction de leur état afin de déterminer leur prix de vente.
+5. Harmonisation de la tarification : En tant que bénévole, je veux disposer d'une manière commune de fixer les prix afin que les bénévoles ne pratiquent pas chacun leur propre méthode.
+6. Inscription aux permanences : En tant que bénévole, je veux pouvoir m'inscrire aux permanences afin de participer à leur organisation.
+7. Production de statistiques : En tant que responsable de l'association, je veux disposer de statistiques afin de les transmettre à la mairie qui nous subventionne.
+8. Émission de reçus aux donateurs : En tant que donateur, je veux pouvoir obtenir un reçu pour mon don afin de disposer d'un justificatif.
+Sprint 1 — Semaines 1 et 2, indispensable, Mettre en place la gestion des objets reçus et leur localisation.
+Sprint 2 — Semaines 3 et 4, importante, Compléter la gestion commerciale et l'organisation des bénévoles.
+Sprint 3 — Semaines 5 et 6, Finalisation, Ajouter les fonctionnalités complémentaires et finaliser l'application.
+
+OBJECTIF
+Rédige un glossaire du projet avec dix mots du métier
+
+-----
+Réponse de l'IA
+Glossaire du projet – Ressourcerie Seconde Vie
+Terme métier
+
+Définition
+
+1. Ressourcerie
+Association qui collecte des objets dont les propriétaires souhaitent se séparer afin de leur donner une seconde vie, notamment en les revendant.
+
+2. Donateur
+Personne qui donne un ou plusieurs objets à la ressourcerie sans les vendre.
+
+3. Don
+Ensemble des objets remis à l'association par un donateur.
+
+4. Objet
+Bien reçu par la ressourcerie, enregistré dans l'application pour assurer son suivi jusqu'à sa vente éventuelle.
+
+5. Catégorie
+Regroupement d'objets de même nature permettant notamment de définir un prix de base.
+
+6. État
+Condition dans laquelle se trouve un objet (neuf, très bon état, bon état, état correct, etc.), utilisée pour déterminer son prix.
+
+7. Tarification
+Méthode commune permettant de fixer le prix de vente d'un objet selon sa catégorie et son état.
+
+8. Emplacement
+Endroit précis où un objet est stocké ou exposé dans la ressourcerie.
+
+9. Permanence
+Période pendant laquelle des bénévoles assurent l'accueil et le fonctionnement de la ressourcerie, notamment le samedi.
+
+10. Reçu de don
+Document justificatif remis à un donateur pour attester de son don à l'association.
+
+Remarque : ces dix termes couvrent les principales activités de la ressourcerie et les fonctionnalités prévues dans les trois sprints du projet.
+
+-----
+Adaptation
+
+1. Ressourcerie
+Association qui collecte des objets dont les propriétaires souhaitent se séparer afin de leur donner une seconde vie, notamment en les revendant.
+
+2. Donateur
+Personne qui donne un ou plusieurs objets à la ressourcerie sans les vendre.
+
+3. Don
+Ensemble des objets remis à l'association par un donateur.
+
+4. Objet
+Bien reçu par la ressourcerie, enregistré dans l'application pour assurer son suivi jusqu'à sa vente éventuelle.
+
+5. Catégorie
+Regroupement d'objets de même nature permettant notamment de définir un prix de base.
+
+6. État
+Condition dans laquelle se trouve un objet (neuf, très bon état, bon état, état correct, etc.), utilisée pour déterminer son prix.
+
+7. Tarification
+Méthode commune permettant de fixer le prix de vente d'un objet selon sa catégorie et son état.
+
+8. Emplacement
+Endroit précis où un objet est stocké ou exposé dans la ressourcerie.
+
+9. Permanence
+Période pendant laquelle des bénévoles assurent l'accueil et le fonctionnement de la ressourcerie
+
+10. Reçu de don
+Document justificatif remis à un donateur pour attester de son don à l'association.
+
+-----
+Backlog :
+1. Enregistrement des objets reçus : Bénévole / Référent caisse / Présidente
+2. Localisation des objets : Bénévole / Référent caisse / Présidente
+3. Suivi des ventes : Présidente
+4. Définition du prix des objets : Bénévole / Référent caisse / Présidente
+5. Harmonisation de la tarification : Présidente
+6. Inscription aux permanences : Bénévole / Référent caisse / Présidente
+7. Production de statistiques : Présidente
+8. Émission de reçus aux donateurs : Bénévole / Référent caisse / Présidente
+

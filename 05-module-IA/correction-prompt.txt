@@ -1,0 +1,12 @@
+Liste des 3 derniers donateurs avec le nombre d'objets donnés :
+- Donateur1 : 7 objets
+- Donateur2 : 3 objets
+- Donateur3 : 9 objets
+
+Fais une liste des donnateurs qui ont donné plus de 5 objets et écris un message type de remerciement.
+
+-----
+
+Karim : < 5 objets
+Mail de remerciement (réduction d'imôts)
+Déclaration à la CNIL : bien avant le RGPD
